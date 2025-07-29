@@ -1,0 +1,16 @@
+{
+  "required": true,
+  "package": "com.teamtea.eclipticseasons.patch.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "refmap": "eclipticseasons_multimodpatch.refmap.json",
+  "mixins": [
+    "modules.presencefootsteps.MixinPFSolver"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "plugin": "com.teamtea.eclipticseasons.patch.mixin.EclipticSeasonsPatchMixinPlugin",
+  "minVersion": "0.8"
+}
