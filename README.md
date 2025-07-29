@@ -1,8 +1,8 @@
-# Tea-the-Story
+# Ecliptic Seasons: MultiMod Patch
 
-“茶风·纪事”是Minecraft的一个中国风模组。
+通过一组兼容性补丁，使节气模组能够更好地与其他模组协同工作。
 
-"Tea the Story" is a Chinese mod about tea and rice.
+A collection of mixins for mod compatibility with Ecliptic Seasons.
 
 ### LICENSE 许可证
 *   For code: BSD-3
