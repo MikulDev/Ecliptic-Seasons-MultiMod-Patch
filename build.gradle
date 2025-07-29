@@ -80,7 +80,7 @@ minecraft {
             // use for logger control
             property 'forgegradle.runs.dev', 'true'
 
-//            jvmArgs "-Xmx3000M"
+            jvmArgs "-Xmx2000M"
 
             jvmArg "-XX:+AllowEnhancedClassRedefinition"
 
@@ -215,10 +215,14 @@ dependencies {
 
     onlyMainRuntimeOnly fg.deobf("curse.maven:journeymap-32274:4873863")
     onlyMainRuntimeOnly fg.deobf("curse.maven:spark-361579:4738952")
-
+    onlyMainRuntimeOnly fg.deobf("curse.maven:configured-457570:5180900")
 
     compileOnly fg.deobf("curse.maven:presence-footsteps-forge-433068:5015286")
     onlyMainRuntimeOnly fg.deobf("curse.maven:presence-footsteps-forge-433068:5015286")
+
+    onlyMainRuntimeOnly fg.deobf("curse.maven:cloth-config-348521:5729105")
+    compileOnly fg.deobf("curse.maven:pretty-rain-1163800:6411988")
+    onlyMainRuntimeOnly fg.deobf("curse.maven:pretty-rain-1163800:6411988")
 
     println("----Scan libs begin----")
     fileTree(dir: 'libs', include: ['*.jar']).each { File file ->
