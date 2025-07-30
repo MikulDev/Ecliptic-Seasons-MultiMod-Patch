@@ -1,8 +1,16 @@
 package com.teamtea.eclipticseasons.patch.modules.particlerain;
 
+import com.teamtea.eclipticseasons.api.EclipticSeasonsApi;
+import com.teamtea.eclipticseasons.common.core.biome.WeatherManager;
+import com.teamtea.eclipticseasons.compat.vanilla.VanillaWeather;
 import com.teamtea.eclipticseasons.patch.api.ESPlugin;
 import com.teamtea.eclipticseasons.patch.api.IESModPlugin;
+import net.minecraft.client.multiplayer.ClientLevel;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Holder;
+import net.minecraft.world.level.biome.Biome;
 import net.minecraftforge.common.ForgeConfigSpec;
+import net.minecraftforge.common.Tags;
 
 @ESPlugin(mods = "particlerain")
 public class PR implements IESModPlugin {
@@ -27,4 +35,20 @@ public class PR implements IESModPlugin {
             builder.pop();
         }
     }
+
+    public static class Hook {
+
+        public static Biome.Precipitation getPrecipitation(Biome instance, BlockPos pos, ClientLevel level, Holder<Biome> biomeHolder) {
+            boolean hasLocalWeather = EclipticSeasonsApi.getInstance().hasLocalWeather(level);
+            Biome.Precipitation precipitationAt = hasLocalWeather ?
+                    WeatherManager.getPrecipitationAt(level, instance, pos) :
+                    VanillaWeather.handlePrecipitationAt(level, instance, pos);
+            if (Config.fixSand.get() && precipitationAt == Biome.Precipitation.RAIN && hasLocalWeather) {
+                if (instance.getModifiedClimateSettings().downfall() == 0 && biomeHolder.is(Tags.Biomes.IS_DESERT))
+                    precipitationAt = Biome.Precipitation.NONE;
+            }
+            return precipitationAt;
+        }
+    }
+
 }

@@ -6,16 +6,12 @@ import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import com.llamalad7.mixinextras.sugar.Local;
 import com.teamtea.eclipticseasons.api.EclipticSeasonsApi;
-import com.teamtea.eclipticseasons.common.core.biome.WeatherManager;
 import com.teamtea.eclipticseasons.common.core.map.MapChecker;
-import com.teamtea.eclipticseasons.compat.vanilla.VanillaWeather;
 import com.teamtea.eclipticseasons.patch.modules.particlerain.PR;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
-import net.minecraft.tags.BiomeTags;
 import net.minecraft.world.level.biome.Biome;
-import net.minecraftforge.common.Tags;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Pseudo;
 import org.spongepowered.asm.mixin.injection.At;
@@ -45,16 +41,10 @@ public abstract class MixinWeatherParticleSpawner {
             method = "spawnParticle")
     private static Biome.Precipitation eclipticseasons$spawnParticle_fix(Biome instance, BlockPos pos, Operation<Biome.Precipitation> original, @Local(argsOnly = true) ClientLevel level, @Local(argsOnly = true) Holder<Biome> biomeHolder) {
         if (!PR.Config.enable.get()) return original.call(instance, pos);
-        boolean hasLocalWeather = EclipticSeasonsApi.getInstance().hasLocalWeather(level);
-        Biome.Precipitation precipitationAt = hasLocalWeather ?
-                WeatherManager.getPrecipitationAt(level, instance, pos) :
-                VanillaWeather.handlePrecipitationAt(level, instance, pos);
-        if (PR.Config.fixSand.get() && precipitationAt == Biome.Precipitation.RAIN && hasLocalWeather) {
-            if (instance.getModifiedClimateSettings().downfall() == 0 && biomeHolder.is(Tags.Biomes.IS_DESERT))
-                precipitationAt = Biome.Precipitation.NONE;
-        }
-        return precipitationAt;
+        return PR.Hook.getPrecipitation(instance, pos, level, biomeHolder);
     }
+
+
 
 
 }
