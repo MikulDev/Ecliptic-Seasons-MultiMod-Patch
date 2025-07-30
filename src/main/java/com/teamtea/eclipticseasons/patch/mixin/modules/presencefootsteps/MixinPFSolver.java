@@ -32,8 +32,8 @@ public abstract class MixinPFSolver {
     @Inject(at = {@At(
             remap = false,
             value = "INVOKE",
-            ordinal = 1,
-            target = "Leu/ha3/presencefootsteps/world/SoundsKey;isResult()Z")},
+            // ordinal = 1,
+            target = "Lnet/minecraft/world/level/Level;isRainingAt(Lnet/minecraft/core/BlockPos;)Z")},
             remap = false,
             method = {
                     "findAssociation(Leu/ha3/presencefootsteps/world/AssociationPool;Lnet/minecraft/world/entity/LivingEntity;Lnet/minecraft/core/BlockPos$MutableBlockPos;Lnet/minecraft/world/phys/AABB;)Leu/ha3/presencefootsteps/world/Association;"})

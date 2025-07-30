@@ -1,6 +1,7 @@
 package com.teamtea.eclipticseasons.patch;
 
 
+import com.teamtea.eclipticseasons.compat.CompatModule;
 import com.teamtea.eclipticseasons.patch.config.PatchClientConfig;
 import com.teamtea.eclipticseasons.patch.config.PatchCommonConfig;
 import com.teamtea.eclipticseasons.patch.data.PatchData;
@@ -16,6 +17,7 @@ import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.fml.loading.FMLLoader;
 import net.neoforged.neoforge.client.gui.ConfigurationScreen;
 import net.neoforged.neoforge.client.gui.IConfigScreenFactory;
+import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -114,6 +116,8 @@ public class EclipticSeasonsPatch {
         if (FMLLoader.getDist() == Dist.CLIENT)
             modContainer.registerExtensionPoint(IConfigScreenFactory.class, ConfigurationScreen::new);
 
+
+        PatchCore.register(NeoForge.EVENT_BUS, modEventBus);
     }
 
     @SuppressWarnings("removal")

@@ -148,11 +148,19 @@ dependencies {
     onlyMainRuntimeOnly "maven.modrinth:sodium:mc1.21.1-0.6.9-neoforge"
     onlyMainRuntimeOnly("curse.maven:journeymap-32274:6213329")
 
+    compileOnly("curse.maven:journeymap-32274:6213329")
+
     compileOnly "curse.maven:presence-footsteps-forge-433068:6171005"
 
     onlyMainRuntimeOnly "curse.maven:cloth-config-348521:5729127"
     compileOnly "curse.maven:pretty-rain-1163800:6347978"
     onlyMainRuntimeOnly "curse.maven:pretty-rain-1163800:6347978"
+
+    compileOnly("curse.maven:snowy-spirit-566142:5983882")
+    onlyMainRuntimeOnly ("curse.maven:snowy-spirit-566142:5983882")
+    onlyMainRuntimeOnly ("curse.maven:selene-499980:6224057")
+
+    compileOnly "curse.maven:touhou-little-maid-355044:6175338"
 
     println("----Scan onlyMainRuntimeOnly libs begin----")
     fileTree(dir: 'libs', include: ['*.jar']).each { File file ->
