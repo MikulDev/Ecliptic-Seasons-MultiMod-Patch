@@ -3,8 +3,8 @@ package com.teamtea.eclipticseasons.patch.modules.particlerain;
 import com.teamtea.eclipticseasons.api.EclipticSeasonsApi;
 import com.teamtea.eclipticseasons.common.core.biome.WeatherManager;
 import com.teamtea.eclipticseasons.compat.vanilla.VanillaWeather;
-import com.teamtea.eclipticseasons.patch.api.ESPlugin;
-import com.teamtea.eclipticseasons.patch.api.IESModPlugin;
+import com.teamtea.eclipticseasons.patch.api.ESPatch;
+import com.teamtea.eclipticseasons.patch.api.IESModPatch;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
@@ -12,8 +12,8 @@ import net.minecraft.world.level.biome.Biome;
 import net.neoforged.neoforge.common.ModConfigSpec;
 import net.neoforged.neoforge.common.Tags;
 
-@ESPlugin(mods = "particlerain")
-public class PR implements IESModPlugin {
+@ESPatch(mods = "particlerain")
+public class PR implements IESModPatch {
 
     @Override
     public void client(ModConfigSpec.Builder consumer) {

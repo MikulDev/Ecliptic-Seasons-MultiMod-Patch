@@ -1,11 +1,11 @@
 package com.teamtea.eclipticseasons.patch.modules.journeymap;
 
-import com.teamtea.eclipticseasons.patch.api.ESPlugin;
-import com.teamtea.eclipticseasons.patch.api.IESModPlugin;
+import com.teamtea.eclipticseasons.patch.api.ESPatch;
+import com.teamtea.eclipticseasons.patch.api.IESModPatch;
 import net.neoforged.neoforge.common.ModConfigSpec;
 
-@ESPlugin(mods = "journeymap")
-public class JM implements IESModPlugin {
+@ESPatch(mods = "journeymap")
+public class JM implements IESModPatch {
 
     @Override
     public void client(ModConfigSpec.Builder consumer) {

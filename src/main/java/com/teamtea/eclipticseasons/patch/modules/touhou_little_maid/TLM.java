@@ -1,15 +1,12 @@
 package com.teamtea.eclipticseasons.patch.modules.touhou_little_maid;
 
-import com.teamtea.eclipticseasons.api.constant.solar.SolarTerm;
-import com.teamtea.eclipticseasons.patch.api.ESPlugin;
-import com.teamtea.eclipticseasons.patch.api.IESModPlugin;
+import com.teamtea.eclipticseasons.patch.api.ESPatch;
+import com.teamtea.eclipticseasons.patch.api.IESModPatch;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.common.ModConfigSpec;
 
-import java.util.List;
-
-@ESPlugin(mods = "touhou_little_maid")
-public class TLM implements IESModPlugin {
+@ESPatch(mods = "touhou_little_maid")
+public class TLM implements IESModPatch {
 
     @Override
     public void common(ModConfigSpec.Builder consumer) {
