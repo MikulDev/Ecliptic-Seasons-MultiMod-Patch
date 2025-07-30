@@ -3,9 +3,9 @@ package com.teamtea.eclipticseasons.patch.modules;
 import com.teamtea.eclipticseasons.patch.EclipticSeasonsPatch;
 import com.teamtea.eclipticseasons.patch.api.ESPlugin;
 import com.teamtea.eclipticseasons.patch.api.IESModPlugin;
-import net.minecraftforge.fml.ModList;
-import net.minecraftforge.forgespi.language.IModInfo;
-import net.minecraftforge.forgespi.language.ModFileScanData;
+import net.neoforged.fml.ModList;
+import net.neoforged.neoforgespi.language.IModInfo;
+import net.neoforged.neoforgespi.language.ModFileScanData;
 
 import java.util.ArrayList;
 import java.util.HashSet;

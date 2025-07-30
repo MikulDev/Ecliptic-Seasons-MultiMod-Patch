@@ -9,23 +9,23 @@ import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.world.level.biome.Biome;
-import net.minecraftforge.common.ForgeConfigSpec;
-import net.minecraftforge.common.Tags;
+import net.neoforged.neoforge.common.ModConfigSpec;
+import net.neoforged.neoforge.common.Tags;
 
 @ESPlugin(mods = "particlerain")
 public class PR implements IESModPlugin {
 
     @Override
-    public void client(ForgeConfigSpec.Builder consumer) {
+    public void client(ModConfigSpec.Builder consumer) {
         Config.load(consumer);
     }
 
     public static class Config {
 
-        public static ForgeConfigSpec.BooleanValue enable;
-        public static ForgeConfigSpec.BooleanValue fixSand;
+        public static ModConfigSpec.BooleanValue enable;
+        public static ModConfigSpec.BooleanValue fixSand;
 
-        public static void load(ForgeConfigSpec.Builder builder) {
+        public static void load(ModConfigSpec.Builder builder) {
             builder.comment("Particle Rain").push("particlerain");
             enable = builder
                     .define("Enable", true);
@@ -44,7 +44,8 @@ public class PR implements IESModPlugin {
                     WeatherManager.getPrecipitationAt(level, instance, pos) :
                     VanillaWeather.handlePrecipitationAt(level, instance, pos);
             if (Config.fixSand.get() && precipitationAt == Biome.Precipitation.RAIN && hasLocalWeather) {
-                if (instance.getModifiedClimateSettings().downfall() == 0 && biomeHolder.is(Tags.Biomes.IS_DESERT))
+                if (instance.getModifiedClimateSettings().downfall() == 0
+                        && (biomeHolder.is(Tags.Biomes.IS_DESERT)||biomeHolder.is(Tags.Biomes.IS_BADLANDS)))
                     precipitationAt = Biome.Precipitation.NONE;
             }
             return precipitationAt;

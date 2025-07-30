@@ -8,6 +8,7 @@ import com.llamalad7.mixinextras.sugar.Local;
 import com.teamtea.eclipticseasons.api.EclipticSeasonsApi;
 import com.teamtea.eclipticseasons.common.core.map.MapChecker;
 import com.teamtea.eclipticseasons.patch.modules.particlerain.PR;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
@@ -44,7 +45,27 @@ public abstract class MixinWeatherParticleSpawner {
         return PR.Hook.getPrecipitation(instance, pos, level, biomeHolder);
     }
 
+    @WrapOperation(at = {@At(
+            remap = false,
+            value = "INVOKE",
+            target = "Lnet/minecraft/client/multiplayer/ClientLevel;getBiome(Lnet/minecraft/core/BlockPos;)Lnet/minecraft/core/Holder;")},
+            remap = false,
+            method = "getBiomeSound")
+    private static Holder<Biome> eclipticseasons$getBiomeSound_surfaceBiome(ClientLevel instance, BlockPos pos, Operation<Holder<Biome>> original) {
+        if (PR.Config.enable.get() && EclipticSeasonsApi.getInstance().hasLocalWeather(instance))
+            return MapChecker.getSurfaceBiome(instance, pos);
+        return original.call(instance, pos);
+    }
 
-
+    @WrapOperation(at = {@At(
+            remap = false,
+            value = "INVOKE",
+            target = "Lnet/minecraft/world/level/biome/Biome;getPrecipitationAt(Lnet/minecraft/core/BlockPos;)Lnet/minecraft/world/level/biome/Biome$Precipitation;")},
+            remap = false,
+            method = "getBiomeSound")
+    private static Biome.Precipitation eclipticseasons$getBiomeSound_fix(Biome instance, BlockPos pos, Operation<Biome.Precipitation> original, @Local Holder<Biome> biomeHolder) {
+        if (!PR.Config.enable.get()) return original.call(instance, pos);
+        return PR.Hook.getPrecipitation(instance, pos, Minecraft.getInstance().level, biomeHolder);
+    }
 
 }

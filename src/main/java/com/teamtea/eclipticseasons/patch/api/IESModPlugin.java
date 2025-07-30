@@ -1,11 +1,11 @@
 package com.teamtea.eclipticseasons.patch.api;
 
-import net.minecraftforge.common.ForgeConfigSpec;
+import net.neoforged.neoforge.common.ModConfigSpec;
 
 public interface IESModPlugin {
 
-    default void client(ForgeConfigSpec.Builder consumer){};
-    default void common(ForgeConfigSpec.Builder consumer){};
+    default void client(ModConfigSpec.Builder consumer){};
+    default void common(ModConfigSpec.Builder consumer){};
 
 
 }
