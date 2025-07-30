@@ -235,6 +235,10 @@ dependencies {
     compileOnly fg.deobf("curse.maven:touhou-little-maid-355044:6120178")
 //    onlyMainRuntimeOnly fg.deobf("curse.maven:touhou-little-maid-355044:6120178")
 
+    compileOnly fg.deobf("curse.maven:ambientsounds-254284:6570130")
+    onlyMainRuntimeOnly fg.deobf("curse.maven:ambientsounds-254284:6570130")
+    onlyMainRuntimeOnly fg.deobf("curse.maven:creativecore-257814:6383884")
+
     println("----Scan libs begin----")
     fileTree(dir: 'libs', include: ['*.jar']).each { File file ->
         def fileName = file.name

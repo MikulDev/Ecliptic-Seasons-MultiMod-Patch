@@ -12,6 +12,7 @@
     "modules.snowyspirit.MixinSnowySpiritGroundStatus"
   ],
   "client": [
+    "modules.ambientsounds.MixinAmbientEnvironment",
     "modules.particlerain.MixinWeatherParticleSpawner"
   ],
   "injectors": {
