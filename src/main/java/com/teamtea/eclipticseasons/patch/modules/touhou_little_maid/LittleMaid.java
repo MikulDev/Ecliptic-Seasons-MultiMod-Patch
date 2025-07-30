@@ -15,8 +15,8 @@ public class LittleMaid {
 
     @SubscribeEvent
     public void stopServer(ServerStoppingEvent event) {
-        synchronized (com.teamtea.eclipticseasons.compat.touhou_little_maid.CleanSnowTask.hasCleanedPos) {
-            com.teamtea.eclipticseasons.compat.touhou_little_maid.CleanSnowTask.hasCleanedPos.clear();
+        synchronized (CleanSnowTask.hasCleanedPos) {
+            CleanSnowTask.hasCleanedPos.clear();
         }
     }
 

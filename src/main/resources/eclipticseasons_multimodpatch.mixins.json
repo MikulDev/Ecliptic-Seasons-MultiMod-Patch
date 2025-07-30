@@ -4,6 +4,7 @@
   "compatibilityLevel": "JAVA_17",
   "refmap": "eclipticseasons_multimodpatch.refmap.json",
   "mixins": [
+    "modules.hauntedharvest.MixinHauntedHarvest",
     "modules.journeymap.MixinBlockMD",
     "modules.presencefootsteps.MixinPFSolver",
     "modules.snowyspirit.MixinSnowySpirit",

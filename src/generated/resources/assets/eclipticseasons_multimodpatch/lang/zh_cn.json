@@ -1,0 +1,5 @@
+{
+  "task.eclipticseasons.clean_snow": "扫雪",
+  "task.eclipticseasons.clean_snow.condition.has_broom": "持有扫帚",
+  "task.eclipticseasons.clean_snow.desc": "适用于节气的覆雪方块"
+}

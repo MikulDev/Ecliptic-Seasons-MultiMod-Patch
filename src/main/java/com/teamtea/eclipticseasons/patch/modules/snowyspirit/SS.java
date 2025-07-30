@@ -33,7 +33,8 @@ public class SS implements IESModPlugin {
                                     SolarTerm.HEAVY_SNOW,
                                     SolarTerm.WINTER_SOLSTICE,
                                     SolarTerm.LESSER_COLD,
-                                    SolarTerm.GREATER_COLD), () -> SolarTerm.WINTER_SOLSTICE,
+                                    SolarTerm.GREATER_COLD),
+                            () -> SolarTerm.WINTER_SOLSTICE,
                             o -> o instanceof SolarTerm);
             builder.pop();
         }
