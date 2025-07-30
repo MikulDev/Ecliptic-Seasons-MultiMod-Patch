@@ -5,14 +5,15 @@
   "refmap": "eclipticseasons_multimodpatch.refmap.json",
   "mixins": [
     "modules.hauntedharvest.MixinHauntedHarvest",
-    "modules.journeymap.MixinBlockMD",
-    "modules.journeymap.MixinMapPlayerTask",
-    "modules.presencefootsteps.MixinPFSolver",
     "modules.snowyspirit.MixinSnowySpirit",
     "modules.snowyspirit.MixinSnowySpiritGroundStatus"
   ],
   "client": [
     "modules.ambientsounds.MixinAmbientEnvironment",
+    "modules.presencefootsteps.MixinPFSolver",
+    "modules.journeymap.MixinBlockMD",
+    "modules.journeymap.MixinMapPlayerTask",
+    "modules.simpleclouds.MixinSimpleCloudWorldEffects",
     "modules.particlerain.MixinWeatherParticleSpawner"
   ],
   "injectors": {
