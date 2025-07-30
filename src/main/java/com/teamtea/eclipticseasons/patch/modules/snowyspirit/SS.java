@@ -1,0 +1,41 @@
+package com.teamtea.eclipticseasons.patch.modules.snowyspirit;
+
+import com.teamtea.eclipticseasons.api.constant.solar.SolarTerm;
+import com.teamtea.eclipticseasons.patch.api.ESPlugin;
+import com.teamtea.eclipticseasons.patch.api.IESModPlugin;
+import net.minecraftforge.common.ForgeConfigSpec;
+
+import java.util.List;
+
+@ESPlugin(mods = "snowyspirit")
+public class SS implements IESModPlugin {
+
+    @Override
+    public void common(ForgeConfigSpec.Builder consumer) {
+        Config.load(consumer);
+    }
+
+    public static class Config {
+
+        public static ForgeConfigSpec.BooleanValue enable;
+        public static ForgeConfigSpec.ConfigValue<List<? extends SolarTerm>> snowyspirit_winters;
+        public static ForgeConfigSpec.BooleanValue specialTime;
+
+        public static void load(ForgeConfigSpec.Builder builder) {
+            builder.comment("Snowy Spirit").push("snowyspirit");
+            enable = builder.define("Enable", true);
+            specialTime = builder.comment("Enable special time with SnowySpirit.")
+                    .define("SpecialTime", true);
+            snowyspirit_winters = builder.comment("Solar Terms in which SnowySpirit villager AI behaviors will be active.")
+                    .defineListAllowEmpty("WinterTime",
+                            () -> List.of(SolarTerm.BEGINNING_OF_WINTER,
+                                    SolarTerm.LIGHT_SNOW,
+                                    SolarTerm.HEAVY_SNOW,
+                                    SolarTerm.WINTER_SOLSTICE,
+                                    SolarTerm.LESSER_COLD,
+                                    SolarTerm.GREATER_COLD),
+                            o -> o instanceof SolarTerm);
+            builder.pop();
+        }
+    }
+}

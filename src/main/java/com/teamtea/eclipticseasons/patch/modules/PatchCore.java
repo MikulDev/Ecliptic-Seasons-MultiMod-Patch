@@ -3,6 +3,7 @@ package com.teamtea.eclipticseasons.patch.modules;
 import com.teamtea.eclipticseasons.patch.EclipticSeasonsPatch;
 import com.teamtea.eclipticseasons.patch.api.ESPlugin;
 import com.teamtea.eclipticseasons.patch.api.IESModPlugin;
+import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.forgespi.language.IModInfo;
 import net.minecraftforge.forgespi.language.ModFileScanData;
@@ -36,6 +37,12 @@ public class PatchCore {
             } catch (Throwable var7) {
                 EclipticSeasonsPatch.logger("Error loading plugin at " + className, var7);
             }
+        }
+    }
+
+    public static void register(IEventBus gameBus, IEventBus modEventBus) {
+        for (IESModPlugin modPlugin : MOD_PLUGINS) {
+            modPlugin.register(gameBus,modEventBus);
         }
     }
 }

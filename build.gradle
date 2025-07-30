@@ -224,6 +224,17 @@ dependencies {
     compileOnly fg.deobf("curse.maven:pretty-rain-1163800:6411988")
     onlyMainRuntimeOnly fg.deobf("curse.maven:pretty-rain-1163800:6411988")
 
+    compileOnly fg.deobf("curse.maven:snowy-spirit-566142:5928029")
+    compileOnly fg.deobf("curse.maven:haunted-harvest-541753:6032347")
+//    onlyMainRuntimeOnly fg.deobf("curse.maven:snowy-spirit-566142:5928029")
+//    onlyMainRuntimeOnly fg.deobf("curse.maven:selene-499980:6224039")
+//    onlyMainRuntimeOnly fg.deobf("curse.maven:haunted-harvest-541753:6032347")
+
+    compileOnly fg.deobf("curse.maven:journeymap-32274:4873863")
+
+    compileOnly fg.deobf("curse.maven:touhou-little-maid-355044:6120178")
+//    onlyMainRuntimeOnly fg.deobf("curse.maven:touhou-little-maid-355044:6120178")
+
     println("----Scan libs begin----")
     fileTree(dir: 'libs', include: ['*.jar']).each { File file ->
         def fileName = file.name

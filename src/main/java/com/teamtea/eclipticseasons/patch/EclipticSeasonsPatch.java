@@ -1,6 +1,7 @@
 package com.teamtea.eclipticseasons.patch;
 
 
+import com.teamtea.eclipticseasons.compat.CompatModule;
 import com.teamtea.eclipticseasons.patch.config.PatchClientConfig;
 import com.teamtea.eclipticseasons.patch.config.PatchCommonConfig;
 import com.teamtea.eclipticseasons.patch.data.PatchData;
@@ -115,7 +116,7 @@ public class EclipticSeasonsPatch {
         ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, PatchClientConfig.CLIENT_CONFIG);
 
 
-
+        PatchCore.register(MinecraftForge.EVENT_BUS, modEventBus);
     }
 
     @SuppressWarnings("removal")
