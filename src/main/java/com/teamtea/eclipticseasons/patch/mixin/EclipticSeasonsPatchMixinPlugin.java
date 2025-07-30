@@ -1,6 +1,5 @@
 package com.teamtea.eclipticseasons.patch.mixin;
 
-import com.teamtea.eclipticseasons.patch.modules.PatchCore;
 import net.minecraftforge.fml.loading.FMLLoader;
 import org.objectweb.asm.tree.ClassNode;
 import org.spongepowered.asm.mixin.extensibility.IMixinConfigPlugin;
@@ -8,11 +7,10 @@ import org.spongepowered.asm.mixin.extensibility.IMixinInfo;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.Objects;
 import java.util.Set;
 
 public class EclipticSeasonsPatchMixinPlugin  implements IMixinConfigPlugin {
-    public static final String MIXIN_COMPAT_PACKAGE = "mixin.modules.";
+    public static final String MIXIN_COMPAT_PACKAGE = "mixin.compat.";
 
     @Override
     public void onLoad(String mixinPackage) {

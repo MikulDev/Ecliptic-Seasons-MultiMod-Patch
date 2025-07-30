@@ -2,7 +2,6 @@ package com.teamtea.eclipticseasons.patch.mixin.modules.journeymap;
 
 
 import com.teamtea.eclipticseasons.common.misc.MapColorReplacer;
-import com.teamtea.eclipticseasons.compat.CompatModule;
 import com.teamtea.eclipticseasons.patch.modules.journeymap.JM;
 import journeymap.client.model.BlockMD;
 import journeymap.client.model.ChunkMD;

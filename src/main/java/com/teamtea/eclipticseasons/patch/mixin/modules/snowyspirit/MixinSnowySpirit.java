@@ -2,7 +2,6 @@ package com.teamtea.eclipticseasons.patch.mixin.modules.snowyspirit;
 
 
 import com.teamtea.eclipticseasons.api.EclipticSeasonsApi;
-import com.teamtea.eclipticseasons.compat.CompatModule;
 import com.teamtea.eclipticseasons.patch.modules.snowyspirit.SS;
 import net.mehvahdjukaar.snowyspirit.SnowySpirit;
 import net.minecraft.world.level.Level;

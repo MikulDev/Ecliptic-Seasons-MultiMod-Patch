@@ -1,14 +1,14 @@
 package com.teamtea.eclipticseasons.patch.modules.hauntedharvest;
 
 import com.teamtea.eclipticseasons.api.constant.solar.SolarTerm;
-import com.teamtea.eclipticseasons.patch.api.ESPlugin;
-import com.teamtea.eclipticseasons.patch.api.IESModPlugin;
+import com.teamtea.eclipticseasons.patch.api.ESPatches;
+import com.teamtea.eclipticseasons.patch.api.IESModPatch;
 import net.minecraftforge.common.ForgeConfigSpec;
 
 import java.util.List;
 
-@ESPlugin(mods = "hauntedharvest")
-public class HH implements IESModPlugin {
+@ESPatches(mods = "hauntedharvest")
+public class HH implements IESModPatch {
 
     @Override
     public void common(ForgeConfigSpec.Builder consumer) {

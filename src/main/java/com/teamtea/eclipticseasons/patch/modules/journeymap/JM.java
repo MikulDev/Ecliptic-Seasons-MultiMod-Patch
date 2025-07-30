@@ -1,11 +1,11 @@
 package com.teamtea.eclipticseasons.patch.modules.journeymap;
 
-import com.teamtea.eclipticseasons.patch.api.ESPlugin;
-import com.teamtea.eclipticseasons.patch.api.IESModPlugin;
+import com.teamtea.eclipticseasons.patch.api.ESPatches;
+import com.teamtea.eclipticseasons.patch.api.IESModPatch;
 import net.minecraftforge.common.ForgeConfigSpec;
 
-@ESPlugin(mods = "journeymap")
-public class JM implements IESModPlugin {
+@ESPatches(mods = "journeymap")
+public class JM implements IESModPatch {
 
     @Override
     public void client(ForgeConfigSpec.Builder consumer) {

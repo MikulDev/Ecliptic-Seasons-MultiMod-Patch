@@ -1,11 +1,11 @@
 package com.teamtea.eclipticseasons.patch.modules.ambientsounds;
 
-import com.teamtea.eclipticseasons.patch.api.ESPlugin;
-import com.teamtea.eclipticseasons.patch.api.IESModPlugin;
+import com.teamtea.eclipticseasons.patch.api.ESPatches;
+import com.teamtea.eclipticseasons.patch.api.IESModPatch;
 import net.minecraftforge.common.ForgeConfigSpec;
 
-@ESPlugin(mods = "ambientsounds")
-public class AS6 implements IESModPlugin {
+@ESPatches(mods = "ambientsounds")
+public class AS6 implements IESModPatch {
 
     @Override
     public void client(ForgeConfigSpec.Builder consumer) {
@@ -17,7 +17,9 @@ public class AS6 implements IESModPlugin {
         public static ForgeConfigSpec.BooleanValue enable;
 
         public static void load(ForgeConfigSpec.Builder builder) {
-            builder.comment("AmbientSounds").push("ambientsounds");
+            builder.comment("Ambient Sounds",
+                            "The mod is no longer maintained for version 1.20, so we need a mixin to make the sounds work properly during snowfall.")
+                    .push("ambientsounds");
             enable = builder
                     .define("Enable", true);
             builder.pop();

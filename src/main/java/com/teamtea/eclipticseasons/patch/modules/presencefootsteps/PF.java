@@ -1,11 +1,11 @@
 package com.teamtea.eclipticseasons.patch.modules.presencefootsteps;
 
-import com.teamtea.eclipticseasons.patch.api.ESPlugin;
-import com.teamtea.eclipticseasons.patch.api.IESModPlugin;
+import com.teamtea.eclipticseasons.patch.api.ESPatches;
+import com.teamtea.eclipticseasons.patch.api.IESModPatch;
 import net.minecraftforge.common.ForgeConfigSpec;
 
-@ESPlugin(mods = "presencefootsteps")
-public class PF implements IESModPlugin {
+@ESPatches(mods = "presencefootsteps")
+public class PF implements IESModPatch {
 
     @Override
     public void client(ForgeConfigSpec.Builder consumer) {

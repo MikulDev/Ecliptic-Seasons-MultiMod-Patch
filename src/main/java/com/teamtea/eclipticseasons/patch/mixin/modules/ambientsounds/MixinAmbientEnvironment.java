@@ -4,12 +4,9 @@ package com.teamtea.eclipticseasons.patch.mixin.modules.ambientsounds;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import com.llamalad7.mixinextras.sugar.Local;
-import com.teamtea.eclipticseasons.EclipticSeasons;
 import com.teamtea.eclipticseasons.api.EclipticSeasonsApi;
 import com.teamtea.eclipticseasons.common.core.map.MapChecker;
 import com.teamtea.eclipticseasons.patch.modules.ambientsounds.AS6;
-import com.teamtea.eclipticseasons.patch.modules.hauntedharvest.HH;
-import jdk.jshell.Snippet;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.world.entity.player.Player;
@@ -19,7 +16,6 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import team.creative.ambientsounds.environment.AmbientEnvironment;
-import team.creative.ambientsounds.environment.BiomeEnvironment;
 
 @Mixin({AmbientEnvironment.class})
 public abstract class MixinAmbientEnvironment {

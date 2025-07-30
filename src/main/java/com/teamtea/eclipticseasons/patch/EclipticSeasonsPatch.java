@@ -1,7 +1,6 @@
 package com.teamtea.eclipticseasons.patch;
 
 
-import com.teamtea.eclipticseasons.compat.CompatModule;
 import com.teamtea.eclipticseasons.patch.config.PatchClientConfig;
 import com.teamtea.eclipticseasons.patch.config.PatchCommonConfig;
 import com.teamtea.eclipticseasons.patch.data.PatchData;
