@@ -1,13 +1,13 @@
 package com.teamtea.eclipticseasons.patch.modules.snowyspirit;
 
 import com.teamtea.eclipticseasons.api.constant.solar.SolarTerm;
-import com.teamtea.eclipticseasons.patch.api.ESPatches;
+import com.teamtea.eclipticseasons.patch.api.ESPatch;
 import com.teamtea.eclipticseasons.patch.api.IESModPatch;
 import net.minecraftforge.common.ForgeConfigSpec;
 
 import java.util.List;
 
-@ESPatches(mods = "snowyspirit")
+@ESPatch(mods = "snowyspirit")
 public class SS implements IESModPatch {
 
     @Override

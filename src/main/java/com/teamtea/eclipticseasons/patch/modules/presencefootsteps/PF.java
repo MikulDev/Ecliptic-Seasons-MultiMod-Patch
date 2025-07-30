@@ -1,10 +1,10 @@
 package com.teamtea.eclipticseasons.patch.modules.presencefootsteps;
 
-import com.teamtea.eclipticseasons.patch.api.ESPatches;
+import com.teamtea.eclipticseasons.patch.api.ESPatch;
 import com.teamtea.eclipticseasons.patch.api.IESModPatch;
 import net.minecraftforge.common.ForgeConfigSpec;
 
-@ESPatches(mods = "presencefootsteps")
+@ESPatch(mods = "presencefootsteps")
 public class PF implements IESModPatch {
 
     @Override

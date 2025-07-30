@@ -1,7 +1,7 @@
 package com.teamtea.eclipticseasons.patch.modules;
 
 import com.teamtea.eclipticseasons.patch.EclipticSeasonsPatch;
-import com.teamtea.eclipticseasons.patch.api.ESPatches;
+import com.teamtea.eclipticseasons.patch.api.ESPatch;
 import com.teamtea.eclipticseasons.patch.api.IESModPatch;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModList;
@@ -18,7 +18,7 @@ public class PatchCore {
     public static void run() {
         MOD_PLUGINS.clear();
         List<String> classNames = ModList.get().getAllScanData().stream().flatMap(($) -> $.getAnnotations().stream()).filter(($) -> {
-            if (!$.annotationType().getClassName().equals(ESPatches.class.getName())) {
+            if (!$.annotationType().getClassName().equals(ESPatch.class.getName())) {
                 return false;
             } else {
                 List<String> required = (ArrayList<String>) $.annotationData().getOrDefault("mods", new ArrayList<>());
@@ -27,7 +27,7 @@ public class PatchCore {
         }).map(ModFileScanData.AnnotationData::memberName).toList();
 
         for (String className : classNames) {
-            EclipticSeasonsPatch.logger("Find patch from " + className);
+            EclipticSeasonsPatch.logger("Found patch from " + className);
             try {
                 Class<?> clazz = Class.forName(className);
                 if (IESModPatch.class.isAssignableFrom(clazz)) {

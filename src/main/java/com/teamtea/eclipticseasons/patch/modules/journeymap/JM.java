@@ -1,10 +1,10 @@
 package com.teamtea.eclipticseasons.patch.modules.journeymap;
 
-import com.teamtea.eclipticseasons.patch.api.ESPatches;
+import com.teamtea.eclipticseasons.patch.api.ESPatch;
 import com.teamtea.eclipticseasons.patch.api.IESModPatch;
 import net.minecraftforge.common.ForgeConfigSpec;
 
-@ESPatches(mods = "journeymap")
+@ESPatch(mods = "journeymap")
 public class JM implements IESModPatch {
 
     @Override

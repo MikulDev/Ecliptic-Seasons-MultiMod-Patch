@@ -1,10 +1,10 @@
 package com.teamtea.eclipticseasons.patch.modules.ambientsounds;
 
-import com.teamtea.eclipticseasons.patch.api.ESPatches;
+import com.teamtea.eclipticseasons.patch.api.ESPatch;
 import com.teamtea.eclipticseasons.patch.api.IESModPatch;
 import net.minecraftforge.common.ForgeConfigSpec;
 
-@ESPatches(mods = "ambientsounds")
+@ESPatch(mods = "ambientsounds")
 public class AS6 implements IESModPatch {
 
     @Override
