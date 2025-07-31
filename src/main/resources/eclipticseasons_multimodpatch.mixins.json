@@ -5,20 +5,25 @@
   "refmap": "eclipticseasons_multimodpatch.refmap.json",
   "mixins": [
     "modules.hauntedharvest.MixinHauntedHarvest",
+    "modules.minecolonies.MixinCitizenAI",
+    "modules.minecolonies.MixinCitizenSleepHandler",
     "modules.snowyspirit.MixinSnowySpirit",
     "modules.snowyspirit.MixinSnowySpiritGroundStatus"
   ],
   "client": [
     "modules.ambientsounds.MixinAmbientEnvironment",
-    "modules.presencefootsteps.MixinPFSolver",
     "modules.journeymap.MixinBlockMD",
     "modules.journeymap.MixinMapPlayerTask",
-    "modules.simpleclouds.MixinSimpleCloudWorldEffects",
-    "modules.particlerain.MixinWeatherParticleSpawner"
+    "modules.particlerain.MixinWeatherParticleSpawner",
+    "modules.presencefootsteps.MixinPFSolver",
+    "modules.simpleclouds.MixinSimpleCloudWorldEffects"
   ],
   "injectors": {
     "defaultRequire": 1
   },
   "plugin": "com.teamtea.eclipticseasons.patch.mixin.EclipticSeasonsPatchMixinPlugin",
+  "mixinextras": {
+    "minVersion": "0.5.0"
+  },
   "minVersion": "0.8"
 }

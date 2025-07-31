@@ -202,9 +202,9 @@ dependencies {
     // The userdev artifact is a special name and will get all sorts of transformations applied to it.
     minecraft "net.minecraftforge:forge:${minecraft_min_version}-${forge_version}"
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
-    compileOnly(annotationProcessor("io.github.llamalad7:mixinextras-common:0.4.1"))
-    implementation(jarJar("io.github.llamalad7:mixinextras-forge:0.4.1")) {
-        jarJar.ranged(it, "[0.4.1,)")
+    compileOnly(annotationProcessor("io.github.llamalad7:mixinextras-common:0.5.0"))
+    implementation(jarJar("io.github.llamalad7:mixinextras-forge:0.5.0")) {
+        jarJar.ranged(it, "[0.5.0,)")
     }
     implementation fg.deobf("curse.maven:jei-238222:5846810")
     implementation fg.deobf("curse.maven:jade-324717:4654448")
@@ -242,6 +242,8 @@ dependencies {
 
     compileOnly fg.deobf("curse.maven:simple-clouds-1121215:6793433")
     onlyMainRuntimeOnly fg.deobf("curse.maven:simple-clouds-1121215:6793433")
+
+    compileOnly fg.deobf("curse.maven:minecolonies-245506:6820739")
 
     println("----Scan libs begin----")
     fileTree(dir: 'libs', include: ['*.jar']).each { File file ->
