@@ -1,4 +1,4 @@
-# Ecliptic Seasons: MultiMod Patch
+# [Ecliptic Seasons: MultiMod Patch](https://www.curseforge.com/minecraft/mc-mods/ecliptic-seasons-multimod-patch)
 
 ![icon](icon.png)
 
