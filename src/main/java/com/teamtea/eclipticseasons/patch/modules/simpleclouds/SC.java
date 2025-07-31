@@ -9,7 +9,7 @@ import net.minecraftforge.common.ForgeConfigSpec;
 public class SC implements IESModPatch {
 
     @Override
-    public void common(ForgeConfigSpec.Builder consumer) {
+    public void client(ForgeConfigSpec.Builder consumer) {
         Config.load(consumer);
     }
 

@@ -23,7 +23,7 @@ public abstract class MixinWeatherParticleSpawner {
 
 
     @WrapOperation(at = {@At(
-            remap = false,
+            // remap = false,
             value = "INVOKE",
             target = "Lnet/minecraft/client/multiplayer/ClientLevel;getBiome(Lnet/minecraft/core/BlockPos;)Lnet/minecraft/core/Holder;")},
             remap = false,
@@ -35,7 +35,7 @@ public abstract class MixinWeatherParticleSpawner {
     }
 
     @WrapOperation(at = {@At(
-            remap = false,
+            // remap = false,
             value = "INVOKE",
             target = "Lnet/minecraft/world/level/biome/Biome;getPrecipitationAt(Lnet/minecraft/core/BlockPos;)Lnet/minecraft/world/level/biome/Biome$Precipitation;")},
             remap = false,
@@ -46,7 +46,7 @@ public abstract class MixinWeatherParticleSpawner {
     }
 
     @WrapOperation(at = {@At(
-            remap = false,
+            // remap = false,
             value = "INVOKE",
             target = "Lnet/minecraft/client/multiplayer/ClientLevel;getBiome(Lnet/minecraft/core/BlockPos;)Lnet/minecraft/core/Holder;")},
             remap = false,
@@ -58,7 +58,7 @@ public abstract class MixinWeatherParticleSpawner {
     }
 
     @WrapOperation(at = {@At(
-            remap = false,
+            // remap = false,
             value = "INVOKE",
             target = "Lnet/minecraft/world/level/biome/Biome;getPrecipitationAt(Lnet/minecraft/core/BlockPos;)Lnet/minecraft/world/level/biome/Biome$Precipitation;")},
             remap = false,

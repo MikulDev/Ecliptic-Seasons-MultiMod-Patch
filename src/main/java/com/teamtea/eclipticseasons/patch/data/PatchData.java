@@ -4,6 +4,7 @@ import com.teamtea.eclipticseasons.data.api.MutablePackOutput;
 import com.teamtea.eclipticseasons.patch.EclipticSeasonsPatch;
 import com.teamtea.eclipticseasons.patch.data.lang.Lang_EN;
 import com.teamtea.eclipticseasons.patch.data.lang.Lang_ZH;
+import com.teamtea.eclipticseasons.patch.data.modules.CQuestProvider;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.data.event.GatherDataEvent;
@@ -22,7 +23,10 @@ public class PatchData {
         if (event.includeClient()) {
             generator.addProvider(event.includeClient(), new Lang_EN(packOutput, helper));
             generator.addProvider(event.includeClient(), new Lang_ZH(packOutput, helper));
+        }
 
+        if (event.includeServer()) {
+            generator.addProvider(event.includeServer(), new CQuestProvider(packOutput, helper));
         }
     }
 }
