@@ -208,7 +208,7 @@ dependencies {
     }
     implementation fg.deobf("curse.maven:jei-238222:5846810")
     implementation fg.deobf("curse.maven:jade-324717:4654448")
-    implementation fg.deobf("curse.maven:ecliptic-seasons-1118306:6827678")
+    implementation fg.deobf("curse.maven:ecliptic-seasons-1118306:6829702")
 
     onlyMainRuntimeOnly fg.deobf("curse.maven:embeddium-908741:5681725")
     onlyMainRuntimeOnly fg.deobf("curse.maven:oculus-581495:6020952")
@@ -222,7 +222,7 @@ dependencies {
 
     onlyMainRuntimeOnly fg.deobf("curse.maven:cloth-config-348521:5729105")
     compileOnly fg.deobf("curse.maven:pretty-rain-1163800:6411988")
-    onlyMainRuntimeOnly fg.deobf("curse.maven:pretty-rain-1163800:6411988")
+//    onlyMainRuntimeOnly fg.deobf("curse.maven:pretty-rain-1163800:6411988")
 
     compileOnly fg.deobf("curse.maven:snowy-spirit-566142:5928029")
     compileOnly fg.deobf("curse.maven:haunted-harvest-541753:6032347")

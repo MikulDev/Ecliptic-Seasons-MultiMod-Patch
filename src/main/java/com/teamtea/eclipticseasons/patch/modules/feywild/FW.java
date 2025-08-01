@@ -1,12 +1,12 @@
-package com.teamtea.eclipticseasons.patch.modules.touhou_little_maid;
+package com.teamtea.eclipticseasons.patch.modules.feywild;
 
 import com.teamtea.eclipticseasons.patch.api.ESPatch;
 import com.teamtea.eclipticseasons.patch.api.IESModPatch;
 import net.minecraftforge.common.ForgeConfigSpec;
 import net.minecraftforge.eventbus.api.IEventBus;
 
-@ESPatch(mods = "touhou_little_maid")
-public class TLM implements IESModPatch {
+@ESPatch(mods = "feywild")
+public class FW implements IESModPatch {
 
     @Override
     public void common(ForgeConfigSpec.Builder consumer) {
@@ -15,7 +15,7 @@ public class TLM implements IESModPatch {
 
     @Override
     public void register(IEventBus gameBus, IEventBus modEventBus) {
-        gameBus.register(LittleMaid.INSTANCE);
+        modEventBus.register(FWEvent.INSTANCE);
     }
 
     public static class Config {
@@ -23,7 +23,7 @@ public class TLM implements IESModPatch {
         public static ForgeConfigSpec.BooleanValue enable;
 
         public static void load(ForgeConfigSpec.Builder builder) {
-            builder.comment("Touhou Little Maid").push("touhou_little_maid");
+            builder.comment("Fey Wild").push("feywild");
             enable = builder.define("Enable", true);
             builder.pop();
         }
