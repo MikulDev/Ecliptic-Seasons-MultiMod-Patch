@@ -146,9 +146,9 @@ dependencies {
     onlyMainRuntimeOnly("curse.maven:spark-361579:5434153")
     onlyMainRuntimeOnly("curse.maven:irisshaders-455508:6213632")
     onlyMainRuntimeOnly "maven.modrinth:sodium:mc1.21.1-0.6.9-neoforge"
-    onlyMainRuntimeOnly("curse.maven:journeymap-32274:6213329")
+    onlyMainRuntimeOnly("curse.maven:journeymap-32274:6689206")
 
-    compileOnly("curse.maven:journeymap-32274:6213329")
+    compileOnly("curse.maven:journeymap-32274:6689206")
 
     compileOnly "curse.maven:presence-footsteps-forge-433068:6171005"
 
@@ -160,7 +160,7 @@ dependencies {
     onlyMainRuntimeOnly ("curse.maven:snowy-spirit-566142:5983882")
     onlyMainRuntimeOnly ("curse.maven:selene-499980:6224057")
     compileOnly "curse.maven:haunted-harvest-541753:6759795"
-    onlyMainRuntimeOnly "curse.maven:haunted-harvest-541753:6759795"
+//    onlyMainRuntimeOnly "curse.maven:haunted-harvest-541753:6759795"
 
     compileOnly "curse.maven:touhou-little-maid-355044:6175338"
 

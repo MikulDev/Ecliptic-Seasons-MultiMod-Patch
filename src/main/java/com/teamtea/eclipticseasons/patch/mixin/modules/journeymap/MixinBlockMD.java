@@ -2,10 +2,9 @@ package com.teamtea.eclipticseasons.patch.mixin.modules.journeymap;
 
 
 import com.teamtea.eclipticseasons.common.misc.MapColorReplacer;
-import com.teamtea.eclipticseasons.compat.CompatModule;
 import com.teamtea.eclipticseasons.patch.modules.journeymap.JM;
-import journeymap.client.model.BlockMD;
-import journeymap.client.model.ChunkMD;
+import journeymap.client.model.block.BlockMD;
+import journeymap.client.model.chunk.ChunkMD;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.MapColor;
