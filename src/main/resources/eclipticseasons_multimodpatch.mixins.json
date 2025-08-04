@@ -4,7 +4,9 @@
   "compatibilityLevel": "JAVA_17",
   "refmap": "eclipticseasons_multimodpatch.refmap.json",
   "mixins": [
+    "modules.cold_sweat.MixinWorldHelper",
     "modules.hauntedharvest.MixinHauntedHarvest",
+    "modules.incontrol.MixinGenericRuleEvaluator",
     "modules.minecolonies.MixinCitizenAI",
     "modules.minecolonies.MixinCitizenSleepHandler",
     "modules.snowyspirit.MixinSnowySpirit",
