@@ -26,7 +26,7 @@ public abstract class MixinWeatherParticleSpawner {
             // remap = false,
             value = "INVOKE",
             target = "Lnet/minecraft/client/multiplayer/ClientLevel;getBiome(Lnet/minecraft/core/BlockPos;)Lnet/minecraft/core/Holder;")},
-            remap = false,
+            // remap = false,
             method = "update")
     private static Holder<Biome> eclipticseasons$update_surfaceBiome(ClientLevel instance, BlockPos pos, Operation<Holder<Biome>> original) {
         if (PR.Config.enable.get() && EclipticSeasonsApi.getInstance().hasLocalWeather(instance))
@@ -38,7 +38,7 @@ public abstract class MixinWeatherParticleSpawner {
             // remap = false,
             value = "INVOKE",
             target = "Lnet/minecraft/world/level/biome/Biome;getPrecipitationAt(Lnet/minecraft/core/BlockPos;)Lnet/minecraft/world/level/biome/Biome$Precipitation;")},
-            remap = false,
+            // remap = false,
             method = "spawnParticle")
     private static Biome.Precipitation eclipticseasons$spawnParticle_fix(Biome instance, BlockPos pos, Operation<Biome.Precipitation> original, @Local(argsOnly = true) ClientLevel level, @Local(argsOnly = true) Holder<Biome> biomeHolder) {
         if (!PR.Config.enable.get()) return original.call(instance, pos);
@@ -49,7 +49,7 @@ public abstract class MixinWeatherParticleSpawner {
             // remap = false,
             value = "INVOKE",
             target = "Lnet/minecraft/client/multiplayer/ClientLevel;getBiome(Lnet/minecraft/core/BlockPos;)Lnet/minecraft/core/Holder;")},
-            remap = false,
+            // remap = false,
             method = "getBiomeSound")
     private static Holder<Biome> eclipticseasons$getBiomeSound_surfaceBiome(ClientLevel instance, BlockPos pos, Operation<Holder<Biome>> original) {
         if (PR.Config.enable.get() && EclipticSeasonsApi.getInstance().hasLocalWeather(instance))
@@ -61,7 +61,7 @@ public abstract class MixinWeatherParticleSpawner {
             // remap = false,
             value = "INVOKE",
             target = "Lnet/minecraft/world/level/biome/Biome;getPrecipitationAt(Lnet/minecraft/core/BlockPos;)Lnet/minecraft/world/level/biome/Biome$Precipitation;")},
-            remap = false,
+            // remap = false,
             method = "getBiomeSound")
     private static Biome.Precipitation eclipticseasons$getBiomeSound_fix(Biome instance, BlockPos pos, Operation<Biome.Precipitation> original, @Local Holder<Biome> biomeHolder) {
         if (!PR.Config.enable.get()) return original.call(instance, pos);

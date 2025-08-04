@@ -8,6 +8,7 @@ import com.teamtea.eclipticseasons.patch.api.IESModPatch;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
+import net.minecraft.tags.BiomeTags;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraftforge.common.ForgeConfigSpec;
 import net.minecraftforge.common.Tags;
@@ -44,7 +45,7 @@ public class PR implements IESModPatch {
                     WeatherManager.getPrecipitationAt(level, instance, pos) :
                     VanillaWeather.handlePrecipitationAt(level, instance, pos);
             if (Config.fixSand.get() && precipitationAt == Biome.Precipitation.RAIN && hasLocalWeather) {
-                if (instance.getModifiedClimateSettings().downfall() == 0 && biomeHolder.is(Tags.Biomes.IS_DESERT))
+                if (instance.getModifiedClimateSettings().downfall() == 0 && (biomeHolder.is(Tags.Biomes.IS_DESERT) || biomeHolder.is(BiomeTags.IS_BADLANDS)))
                     precipitationAt = Biome.Precipitation.NONE;
             }
             return precipitationAt;
