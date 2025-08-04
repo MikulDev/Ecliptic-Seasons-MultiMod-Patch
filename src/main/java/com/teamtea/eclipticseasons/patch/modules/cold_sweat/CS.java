@@ -2,6 +2,7 @@ package com.teamtea.eclipticseasons.patch.modules.cold_sweat;
 
 import com.teamtea.eclipticseasons.patch.api.ESPatch;
 import com.teamtea.eclipticseasons.patch.api.IESModPatch;
+import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.common.ModConfigSpec;
 
 import java.util.List;
@@ -12,6 +13,11 @@ public class CS implements IESModPatch {
     @Override
     public void common(ModConfigSpec.Builder consumer) {
         Config.load(consumer);
+    }
+
+    @Override
+    public void register(IEventBus gameBus, IEventBus modEventBus) {
+        gameBus.register(Cold_Sweat.INSTANCE);
     }
 
     public static class Config {
