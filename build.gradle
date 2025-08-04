@@ -138,10 +138,14 @@ dependencies {
     // For all intends and purposes: You can treat this dependency as if it is a normal library you would use.
     implementation "net.neoforged:neoforge:${neo_version}"
 
+    compileOnly(jarJar("io.github.llamalad7:mixinextras-neoforge:0.5.0")) {
+        jarJar.ranged(it, "[0.5.0,)")
+    }
+
     runtimeOnly("curse.maven:jei-238222:5846880")
     runtimeOnly("curse.maven:jade-324717:5591256")
 
-    implementation("curse.maven:ecliptic-seasons-1118306:6827680")
+    implementation("curse.maven:ecliptic-seasons-1118306:6846053[")
 
     onlyMainRuntimeOnly("curse.maven:spark-361579:5434153")
     onlyMainRuntimeOnly("curse.maven:irisshaders-455508:6213632")
@@ -163,6 +167,15 @@ dependencies {
 //    onlyMainRuntimeOnly "curse.maven:haunted-harvest-541753:6759795"
 
     compileOnly "curse.maven:touhou-little-maid-355044:6175338"
+
+    compileOnly("curse.maven:simple-clouds-1121215:5812034")
+    compileOnly("curse.maven:cold-sweat-506194:6176789")
+//    runtimeOnly("curse.maven:cold-sweat-506194:6176789")
+    compileOnly("curse.maven:in-control-257356:5932871")
+//    onlyMainRuntimeOnly ("curse.maven:in-control-257356:5932871")
+
+    compileOnly "curse.maven:minecolonies-245506:6844367"
+    implementation "curse.maven:dynamictrees-252818:6611182"
 
     println("----Scan onlyMainRuntimeOnly libs begin----")
     fileTree(dir: 'libs', include: ['*.jar']).each { File file ->
