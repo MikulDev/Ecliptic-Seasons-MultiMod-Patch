@@ -6,6 +6,7 @@
   "mixins": [
     "modules.cold_sweat.MixinWorldHelper",
     "modules.hauntedharvest.MixinHauntedHarvest",
+    "modules.incontrol.MixinGenericAttributeMapFactory",
     "modules.incontrol.MixinGenericRuleEvaluator",
     "modules.minecolonies.MixinCitizenAI",
     "modules.minecolonies.MixinCitizenSleepHandler",

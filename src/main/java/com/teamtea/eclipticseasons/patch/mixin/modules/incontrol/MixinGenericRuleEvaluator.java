@@ -1,18 +1,23 @@
 package com.teamtea.eclipticseasons.patch.mixin.modules.incontrol;
 
 
+import com.llamalad7.mixinextras.sugar.Local;
 import com.teamtea.eclipticseasons.api.EclipticSeasonsApi;
 import com.teamtea.eclipticseasons.api.constant.solar.Season;
 import com.teamtea.eclipticseasons.patch.modules.incontrol.IC;
+import com.teamtea.eclipticseasons.patch.modules.incontrol.ICHook;
 import mcjty.incontrol.rules.support.GenericRuleEvaluator;
 import mcjty.incontrol.tools.rules.IEventQuery;
-import mcjty.incontrol.tools.varia.Tools;
+import mcjty.incontrol.tools.typed.AttributeMap;
+import net.minecraft.core.BlockPos;
+import net.minecraft.world.level.Level;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import java.util.List;
 import java.util.function.BiFunction;
@@ -30,7 +35,8 @@ public abstract class MixinGenericRuleEvaluator {
             remap = false, cancellable = true)
     private void eclipticseasons$addSpringCheck(Boolean s, CallbackInfo ci) {
         if (IC.Config.enable.get()) {
-            this.checks.add((event, query) -> Season.SPRING == EclipticSeasonsApi.getInstance().getSolarTerm(Tools.getServerWorld(query.getWorld(event))).getSeason());
+            this.checks.add((event, query) ->
+                    ICHook.validSeasonOrLocal(ICHook.fetchLevel(event, query), query.getPos(event), Season.SPRING, s));
             ci.cancel();
         }
     }
@@ -40,7 +46,8 @@ public abstract class MixinGenericRuleEvaluator {
             remap = false, cancellable = true)
     private void eclipticseasons$addSummerCheck(Boolean s, CallbackInfo ci) {
         if (IC.Config.enable.get()) {
-            this.checks.add((event, query) -> Season.SUMMER == EclipticSeasonsApi.getInstance().getSolarTerm(Tools.getServerWorld(query.getWorld(event))).getSeason());
+            this.checks.add((event, query) ->
+                    ICHook.validSeasonOrLocal(ICHook.fetchLevel(event, query), query.getPos(event), Season.SUMMER, s));
             ci.cancel();
         }
     }
@@ -50,7 +57,8 @@ public abstract class MixinGenericRuleEvaluator {
             remap = false, cancellable = true)
     private void eclipticseasons$addAutumnCheck(Boolean s, CallbackInfo ci) {
         if (IC.Config.enable.get()) {
-            this.checks.add((event, query) -> Season.AUTUMN == EclipticSeasonsApi.getInstance().getSolarTerm(Tools.getServerWorld(query.getWorld(event))).getSeason());
+            this.checks.add((event, query) ->
+                    ICHook.validSeasonOrLocal(ICHook.fetchLevel(event, query), query.getPos(event), Season.AUTUMN,s));
             ci.cancel();
         }
     }
@@ -60,8 +68,52 @@ public abstract class MixinGenericRuleEvaluator {
             remap = false, cancellable = true)
     private void eclipticseasons$addWinterCheck(Boolean s, CallbackInfo ci) {
         if (IC.Config.enable.get()) {
-            this.checks.add((event, query) -> Season.WINTER == EclipticSeasonsApi.getInstance().getSolarTerm(Tools.getServerWorld(query.getWorld(event))).getSeason());
+            this.checks.add((event, query) ->
+                    ICHook.validSeasonOrLocal(ICHook.fetchLevel(event, query), query.getPos(event), Season.WINTER, s));
             ci.cancel();
+        }
+    }
+
+    @Inject(at = {@At(value = "INVOKE", target = "Lnet/minecraft/world/level/Level;isRaining()Z")},
+            method = {"lambda$addWeatherCheck$44"},
+            remap = false, cancellable = true)
+    private static void eclipticseasons$lambda$addWeatherCheck$44(Object event, IEventQuery query, CallbackInfoReturnable<Boolean> cir, @Local Level level) {
+        if (IC.Config.enable.get()) {
+            BlockPos pos = query.getPos(event);
+            if (pos != null) {
+                cir.setReturnValue(EclipticSeasonsApi.getInstance().isRainingOrSnowing(level, pos));
+            }
+        }
+    }
+
+    @Inject(at = {@At(value = "INVOKE", target = "Lnet/minecraft/world/level/Level;isThundering()Z")},
+            method = {"lambda$addWeatherCheck$45"},
+            remap = false, cancellable = true)
+    private static void eclipticseasons$lambda$addWeatherCheck$45(Object event, IEventQuery query, CallbackInfoReturnable<Boolean> cir, @Local Level level) {
+        if (IC.Config.enable.get()) {
+            BlockPos pos = query.getPos(event);
+            if (pos != null) {
+                cir.setReturnValue(EclipticSeasonsApi.getInstance().isThundering(level, pos));
+            }
+        }
+    }
+
+
+    @Inject(at = {@At(value = "HEAD")},
+            method = {"addChecks"},
+            remap = false)
+    private void eclipticseasons$addChecks(AttributeMap map, CallbackInfo ci) {
+        if (IC.Config.enable.get()) {
+            map.consumeAsList(ICHook.VALID_TERMS, (sl) -> {
+                ICHook.ValidTerms validTerms = ICHook.ValidTerms.of(sl);
+                this.checks.add((event, query) ->
+                        validTerms.matches(ICHook.fetchLevel(event, query)));
+            });
+            map.consumeAsList(ICHook.SURFACE_BIOMES, (sl) -> {
+                ICHook.SurfaceBiomeSet validTerms = ICHook.SurfaceBiomeSet.of(sl);
+                this.checks.add((event, query) ->
+                        validTerms.matches(ICHook.fetchLevel(event, query),query.getPos(event)));
+            });
         }
     }
 
