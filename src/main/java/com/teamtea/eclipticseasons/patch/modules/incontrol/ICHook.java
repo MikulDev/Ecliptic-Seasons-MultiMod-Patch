@@ -80,6 +80,8 @@ public class ICHook {
 
         public boolean matches(Level level, @Nullable BlockPos pos) {
             if (pos == null) return false;
+            if (!MapChecker.isLoadNearByOnlyServer(level, pos))
+                return biomes.contains(CropGrowthHandler.getCropBiome(level,pos));
             return biomes.contains(MapChecker.getSurfaceBiome(level, pos));
         }
 
