@@ -172,7 +172,7 @@ dependencies {
     compileOnly("curse.maven:cold-sweat-506194:6176789")
 //    runtimeOnly("curse.maven:cold-sweat-506194:6176789")
     compileOnly("curse.maven:in-control-257356:5932871")
-//    onlyMainRuntimeOnly ("curse.maven:in-control-257356:5932871")
+    onlyMainRuntimeOnly ("curse.maven:in-control-257356:5932871")
 
     compileOnly "curse.maven:minecolonies-245506:6844367"
     implementation "curse.maven:dynamictrees-252818:6611182"
