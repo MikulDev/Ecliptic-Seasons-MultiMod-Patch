@@ -75,7 +75,7 @@ public abstract class MixinGenericRuleEvaluator {
     }
 
     @Inject(at = {@At(value = "INVOKE", target = "Lnet/minecraft/world/level/Level;isRaining()Z",remap = true)},
-            method = {"lambda$addWeatherCheck$44"},
+            method = {"lambda$addWeatherCheck$45"},
             remap = false, cancellable = true)
     private static void eclipticseasons$lambda$addWeatherCheck$44(Object event, IEventQuery query, CallbackInfoReturnable<Boolean> cir, @Local Level level) {
         if (IC.Config.enable.get()) {
@@ -87,7 +87,7 @@ public abstract class MixinGenericRuleEvaluator {
     }
 
     @Inject(at = {@At(value = "INVOKE", target = "Lnet/minecraft/world/level/Level;isThundering()Z",remap = true)},
-            method = {"lambda$addWeatherCheck$45"},
+            method = {"lambda$addWeatherCheck$46"},
             remap = false, cancellable = true)
     private static void eclipticseasons$lambda$addWeatherCheck$45(Object event, IEventQuery query, CallbackInfoReturnable<Boolean> cir, @Local Level level) {
         if (IC.Config.enable.get()) {
