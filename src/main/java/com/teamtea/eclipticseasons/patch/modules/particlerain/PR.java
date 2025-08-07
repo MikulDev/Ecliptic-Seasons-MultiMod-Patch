@@ -27,7 +27,7 @@ public class PR implements IESModPatch {
         public static ForgeConfigSpec.BooleanValue fixSand;
 
         public static void load(ForgeConfigSpec.Builder builder) {
-            builder.comment("Particle Rain").push("particlerain");
+            builder.comment("Pretty Rain").push("particlerain");
             enable = builder
                     .define("Enable", true);
             fixSand = builder
