@@ -138,9 +138,9 @@ dependencies {
     // For all intends and purposes: You can treat this dependency as if it is a normal library you would use.
     implementation "net.neoforged:neoforge:${neo_version}"
 
-    compileOnly(jarJar("io.github.llamalad7:mixinextras-neoforge:0.5.0")) {
-        jarJar.ranged(it, "[0.5.0,)")
-    }
+//    compileOnly(jarJar("io.github.llamalad7:mixinextras-neoforge:0.5.0")) {
+//        jarJar.ranged(it, "[0.5.0,)")
+//    }
 
     runtimeOnly("curse.maven:jei-238222:5846880")
     runtimeOnly("curse.maven:jade-324717:5591256")
