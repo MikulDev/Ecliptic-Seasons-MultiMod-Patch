@@ -3,7 +3,7 @@ plugins {
     id 'eclipse'
     id 'idea'
     id 'maven-publish'
-    id 'net.neoforged.gradle.userdev' version '7.0.183'
+    id 'net.neoforged.gradle.userdev' version '7.0.192'
 }
 
 
@@ -145,11 +145,12 @@ dependencies {
     runtimeOnly("curse.maven:jei-238222:5846880")
     runtimeOnly("curse.maven:jade-324717:5591256")
 
-    implementation("curse.maven:ecliptic-seasons-1118306:6846053[")
+    implementation("curse.maven:ecliptic-seasons-1118306:6922600")
 
-    onlyMainRuntimeOnly("curse.maven:spark-361579:5434153")
     onlyMainRuntimeOnly("curse.maven:irisshaders-455508:6213632")
     onlyMainRuntimeOnly "maven.modrinth:sodium:mc1.21.1-0.6.9-neoforge"
+
+    onlyMainRuntimeOnly("curse.maven:spark-361579:5434153")
     onlyMainRuntimeOnly("curse.maven:journeymap-32274:6689206")
 
     compileOnly("curse.maven:journeymap-32274:6689206")

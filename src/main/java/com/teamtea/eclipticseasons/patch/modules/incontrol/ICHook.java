@@ -6,7 +6,6 @@ import com.teamtea.eclipticseasons.api.constant.solar.SolarTerm;
 import com.teamtea.eclipticseasons.common.core.biome.WeatherManager;
 import com.teamtea.eclipticseasons.common.core.crop.CropGrowthHandler;
 import com.teamtea.eclipticseasons.common.core.map.MapChecker;
-import com.teamtea.eclipticseasons.common.game.AnimalHooks;
 import mcjty.incontrol.tools.rules.IEventQuery;
 import mcjty.incontrol.tools.typed.Key;
 import mcjty.incontrol.tools.typed.Type;
@@ -114,7 +113,7 @@ public class ICHook {
     public static boolean validSeasonOrLocal(Level level, @Nullable BlockPos pos, Season season, boolean in) {
         Season now = pos == null ?
                 EclipticSeasonsApi.getInstance().getSolarTerm(level).getSeason() :
-                AnimalHooks.getUseSeason(level, pos);
+                EclipticSeasonsApi.getInstance().getAgroSeason(level, pos);
         return in == (now == season);
     }
 }
