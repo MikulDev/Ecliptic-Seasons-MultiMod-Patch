@@ -14,6 +14,7 @@
     "modules.snowyspirit.MixinSnowySpiritGroundStatus"
   ],
   "client": [
+    "modules.ambientsounds.MixinBiomeEnvironment",
     "modules.ambientsounds.MixinAmbientEnvironment",
     "modules.journeymap.MixinBlockMD",
     "modules.journeymap.MixinMapPlayerTask",

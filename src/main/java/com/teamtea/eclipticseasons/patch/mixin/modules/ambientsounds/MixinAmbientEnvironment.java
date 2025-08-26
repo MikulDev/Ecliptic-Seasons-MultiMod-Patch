@@ -12,6 +12,7 @@ import com.teamtea.eclipticseasons.common.core.map.MapChecker;
 import com.teamtea.eclipticseasons.patch.modules.ambientsounds.AS6;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.biome.Biome;
@@ -36,7 +37,7 @@ public abstract class MixinAmbientEnvironment {
     @WrapOperation(at = {@At(value = "INVOKE", target = "Lteam/creative/ambientsounds/mod/SereneSeasonsCompat;getTemperature(Lnet/minecraft/world/entity/player/Player;)F")},
             method = {"analyzeFast"},
             remap = false)
-    private float eclipticseasons$isHalloween(Player player, Operation<Float> original, @Local(argsOnly = true) Level level) {
+    private float eclipticseasons$SeasonsCompat(Player player, Operation<Float> original, @Local(argsOnly = true) Level level) {
         if (AS6.Config.enable.get()) {
             BlockPos pos = player.blockPosition();
             Holder<Biome> biomeHolder = EclipticSeasonsApi.getInstance().hasLocalWeather(level) ?
@@ -44,7 +45,7 @@ public abstract class MixinAmbientEnvironment {
             Biome.Precipitation currentPrecipitationAt = EclipticSeasonsApi.getInstance().getCurrentPrecipitationAt(level, pos);
             float baseTemperature = EclipticUtil.getTemperatureFloat(level, biomeHolder.value(), pos);
             SolarTerm solarTerm = EclipticSeasonsApi.getInstance().getSolarTerm(level);
-            ISnowTerm snowTerm = SolarTerm.getSnowTerm(biomeHolder.value());
+            ISnowTerm snowTerm = SolarTerm.getSnowTerm(biomeHolder.value(), level instanceof ServerLevel, EclipticUtil.getSnowTempChange(level));
             if (snowTerm.maySnow(solarTerm)) {
                 // baseTemperature = EclipticUtil.getTemperatureFloat(level, biomeHolder.value(), pos);
                 if (currentPrecipitationAt == Biome.Precipitation.SNOW)

@@ -4,9 +4,7 @@ import com.teamtea.eclipticseasons.api.EclipticSeasonsApi;
 import com.teamtea.eclipticseasons.api.constant.solar.Season;
 import com.teamtea.eclipticseasons.api.constant.solar.SolarTerm;
 import com.teamtea.eclipticseasons.common.core.biome.WeatherManager;
-import com.teamtea.eclipticseasons.common.core.crop.CropGrowthHandler;
 import com.teamtea.eclipticseasons.common.core.map.MapChecker;
-import com.teamtea.eclipticseasons.common.game.AnimalHooks;
 import mcjty.incontrol.tools.rules.IEventQuery;
 import mcjty.incontrol.tools.typed.Key;
 import mcjty.incontrol.tools.typed.Type;
@@ -14,14 +12,12 @@ import net.minecraft.core.*;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.tags.BiomeTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraftforge.server.ServerLifecycleHooks;
-import org.checkerframework.checker.units.qual.A;
 
 import javax.annotation.Nullable;
 import java.util.*;
@@ -118,7 +114,7 @@ public class ICHook {
     public static boolean validSeasonOrLocal(Level level, @Nullable BlockPos pos, Season season, boolean in) {
         Season now = pos == null ?
                 EclipticSeasonsApi.getInstance().getSolarTerm(level).getSeason() :
-                AnimalHooks.getUseSeason(level, pos);
+                EclipticSeasonsApi.getInstance().getAgroSeason(level, pos);
         return in == (now == season);
     }
 }
