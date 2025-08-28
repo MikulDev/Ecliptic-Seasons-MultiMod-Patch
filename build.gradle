@@ -178,6 +178,10 @@ dependencies {
     compileOnly "curse.maven:minecolonies-245506:6844367"
     implementation "curse.maven:dynamictrees-252818:6611182"
 
+    onlyMainRuntimeOnly "curse.maven:diagonal-fences-458048:5918197"
+    onlyMainRuntimeOnly "curse.maven:puzzles-lib-495476:6874068"
+    onlyMainRuntimeOnly "curse.maven:diagonal-walls-969422:5918894"
+
     println("----Scan onlyMainRuntimeOnly libs begin----")
     fileTree(dir: 'libs', include: ['*.jar']).each { File file ->
         def fileName = file.name
