@@ -27,7 +27,8 @@ A collection of mixins for mod compatibility with Ecliptic Seasons.
 | *Minecolonies*       | ✔️     | ✔️     | Dynamically adjusts citizens' sleep time according to the season.                                                         |
 | *Ambient Sounds*     | ❌️     | ✔️     | Adapts biome temperature, thunder, and snowfall calculations.                                                             |
 | *Touhou Little Maid* | ✔️     | ✔️     | Allows the maid to sweep snowy blocks.                                                                                    |
-| *Simple Clouds*      | ❌️     | ❓︎     | Adapts biome detection and precipitation data.                                                                            |
+| *Diagonal Blocks*    | ✔️     | ✔️     | Limited snowy block definition support for diagonal walls and fences.                                                     |
+| *Simple Clouds*      | ❓︎     | ❓︎     | Adapts biome detection and precipitation data.                                                                            |
 
 ### Examples for InControl
 
