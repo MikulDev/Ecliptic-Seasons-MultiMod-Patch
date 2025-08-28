@@ -1,4 +1,4 @@
-# Ecliptic Seasons: MultiMod Patch
+# [Ecliptic Seasons: MultiMod Patch](https://www.curseforge.com/minecraft/mc-mods/ecliptic-seasons-multimod-patch)
 
 ![icon](icon.png)
 
@@ -7,11 +7,11 @@
 A collection of mixins for mod compatibility with Ecliptic Seasons.
 
 ### LICENSE 许可证
-*   For code: BSD-3
-*   对于代码：BSD-3
-*   For resources: CC BY-NC-SA 4.0
-*   对于资源文件：署名-非商业性使用-相同方式共享 4.0 国际
 
+* For code: BSD-3
+* 对于代码：BSD-3
+* For resources: CC BY-NC-SA 4.0
+* 对于资源文件：署名-非商业性使用-相同方式共享 4.0 国际
 
 | Mod                  | 1.21.1 | 1.20.1 | Patched Content                                                                                                           |
 |----------------------|--------|--------|---------------------------------------------------------------------------------------------------------------------------|
@@ -27,7 +27,8 @@ A collection of mixins for mod compatibility with Ecliptic Seasons.
 | *Minecolonies*       | ✔️     | ✔️     | Dynamically adjusts citizens' sleep time according to the season.                                                         |
 | *Ambient Sounds*     | ❌️     | ✔️     | Adapts biome temperature, thunder, and snowfall calculations.                                                             |
 | *Touhou Little Maid* | ✔️     | ✔️     | Allows the maid to sweep snowy blocks.                                                                                    |
-| *Simple Clouds*      | ❌️     | ❓︎     | Adapts biome detection and precipitation data.                                                                            |
+| *Diagonal Blocks*    | ✔️     | ✔️     | Limited snowy block definition support for diagonal walls and fences.                                                     |
+| *Simple Clouds*      | ❓︎     | ❓︎     | Adapts biome detection and precipitation data.                                                                            |
 
 ### Examples for InControl
 
@@ -67,3 +68,4 @@ A collection of mixins for mod compatibility with Ecliptic Seasons.
   }
 ]
 ```
+
