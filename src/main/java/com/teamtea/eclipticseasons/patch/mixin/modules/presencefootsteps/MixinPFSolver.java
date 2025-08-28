@@ -29,6 +29,7 @@ public abstract class MixinPFSolver {
             ordinal = 1,
             target = "Leu/ha3/presencefootsteps/world/Emitter;isResult(Ljava/lang/String;)Z")},
             remap = false,
+            require = 0,
             method = {
                     "findAssociation(Lnet/minecraft/world/entity/Entity;Lnet/minecraft/core/BlockPos;Lnet/minecraft/world/phys/AABB;)Leu/ha3/presencefootsteps/world/Association;"})
     public void eclipticseasons$findAssociation_check_if_snow(Entity entity, BlockPos pos, AABB collider, CallbackInfoReturnable<Association> cir, @Local(ordinal = 0) LocalRef<BlockState> stateLocalRef) {
