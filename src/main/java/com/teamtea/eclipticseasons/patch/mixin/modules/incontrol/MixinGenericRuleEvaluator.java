@@ -58,7 +58,7 @@ public abstract class MixinGenericRuleEvaluator {
     private void eclipticseasons$addAutumnCheck(Boolean s, CallbackInfo ci) {
         if (IC.Config.enable.get()) {
             this.checks.add((event, query) ->
-                    ICHook.validSeasonOrLocal(ICHook.fetchLevel(event, query), query.getPos(event), Season.AUTUMN,s));
+                    ICHook.validSeasonOrLocal(ICHook.fetchLevel(event, query), query.getPos(event), Season.AUTUMN, s));
             ci.cancel();
         }
     }
@@ -74,9 +74,9 @@ public abstract class MixinGenericRuleEvaluator {
         }
     }
 
-    @Inject(at = {@At(value = "INVOKE", target = "Lnet/minecraft/world/level/Level;isRaining()Z",remap = true)},
-            method = {"lambda$addWeatherCheck$45"},
-            remap = false, cancellable = true)
+    @Inject(at = {@At(value = "INVOKE", target = "Lnet/minecraft/world/level/Level;isRaining()Z", remap = true)},
+            method = {"lambda$addWeatherCheck$51"},
+            remap = false, cancellable = true, require = 0)
     private static void eclipticseasons$lambda$addWeatherCheck$44(Object event, IEventQuery query, CallbackInfoReturnable<Boolean> cir, @Local Level level) {
         if (IC.Config.enable.get()) {
             BlockPos pos = query.getPos(event);
@@ -86,9 +86,9 @@ public abstract class MixinGenericRuleEvaluator {
         }
     }
 
-    @Inject(at = {@At(value = "INVOKE", target = "Lnet/minecraft/world/level/Level;isThundering()Z",remap = true)},
-            method = {"lambda$addWeatherCheck$46"},
-            remap = false, cancellable = true)
+    @Inject(at = {@At(value = "INVOKE", target = "Lnet/minecraft/world/level/Level;isThundering()Z", remap = true)},
+            method = {"lambda$addWeatherCheck$52"},
+            remap = false, cancellable = true, require = 0)
     private static void eclipticseasons$lambda$addWeatherCheck$45(Object event, IEventQuery query, CallbackInfoReturnable<Boolean> cir, @Local Level level) {
         if (IC.Config.enable.get()) {
             BlockPos pos = query.getPos(event);
@@ -112,7 +112,7 @@ public abstract class MixinGenericRuleEvaluator {
             map.consumeAsList(ICHook.SURFACE_BIOMES, (sl) -> {
                 ICHook.SurfaceBiomeSet validTerms = ICHook.SurfaceBiomeSet.of(sl);
                 this.checks.add((event, query) ->
-                        validTerms.matches(ICHook.fetchLevel(event, query),query.getPos(event)));
+                        validTerms.matches(ICHook.fetchLevel(event, query), query.getPos(event)));
             });
         }
     }
