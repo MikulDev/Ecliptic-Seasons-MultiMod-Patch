@@ -5,7 +5,7 @@ import com.teamtea.eclipticseasons.patch.api.IESModPatch;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.common.ModConfigSpec;
 
-@ESPatch(mods = "touhou_little_maid")
+// @ESPatch(mods = "touhou_little_maid")
 public class TLM implements IESModPatch {
 
     @Override
@@ -13,10 +13,6 @@ public class TLM implements IESModPatch {
         Config.load(consumer);
     }
 
-    @Override
-    public void register(IEventBus gameBus, IEventBus modEventBus) {
-        gameBus.register(LittleMaid.INSTANCE);
-    }
 
     public static class Config {
 

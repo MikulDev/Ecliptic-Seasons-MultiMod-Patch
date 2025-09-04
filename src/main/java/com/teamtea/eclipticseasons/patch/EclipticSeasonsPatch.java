@@ -11,6 +11,8 @@ import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.ModLoadingContext;
+import net.neoforged.fml.ModLoadingException;
+import net.neoforged.fml.ModLoadingIssue;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -103,7 +105,8 @@ public class EclipticSeasonsPatch {
 
     public EclipticSeasonsPatch(IEventBus modEventBus, ModContainer modContainer) {
         PatchCore.run();
-
+        // if(false)
+        // throw new ModLoadingException(List.of(ModLoadingIssue.error().withCause()));
         modEventBus.addListener(this::gatherData);
         modEventBus.addListener(this::FMLCommonSetup);
 
