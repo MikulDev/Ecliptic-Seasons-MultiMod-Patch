@@ -13,10 +13,6 @@ public class TLM implements IESModPatch {
         Config.load(consumer);
     }
 
-    @Override
-    public void register(IEventBus gameBus, IEventBus modEventBus) {
-        gameBus.register(LittleMaid.INSTANCE);
-    }
 
     public static class Config {
 
