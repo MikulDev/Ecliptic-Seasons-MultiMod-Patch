@@ -80,7 +80,7 @@ public class CleanSnowTask implements IFarmTask {
         boolean snowyBlock =
                 cropState.is(Blocks.SNOW) || EclipticSeasonsApi.getInstance().isSnowyBlock(level, blockState, below);
         if (snowyBlock) {
-            ChatBubbleManger.addInnerChatText(maid, cropPos.toString()+"****"+cropPos.distToCenterSqr(maid.blockPosition().getCenter()));
+            // ChatBubbleManger.addInnerChatText(maid, cropPos.toString()+"****"+cropPos.distToCenterSqr(maid.blockPosition().getCenter()));
         }
         return snowyBlock;
     }
