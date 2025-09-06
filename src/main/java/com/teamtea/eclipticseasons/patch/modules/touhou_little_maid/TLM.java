@@ -5,7 +5,7 @@ import com.teamtea.eclipticseasons.patch.api.IESModPatch;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.common.ModConfigSpec;
 
-@ESPatch(mods = "touhou_little_maid")
+@ESPatch(mods = "touhou_little_maid", esVersion = "0.12.0-pre13")
 public class TLM implements IESModPatch {
 
     @Override

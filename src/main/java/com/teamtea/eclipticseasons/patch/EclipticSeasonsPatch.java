@@ -1,7 +1,6 @@
 package com.teamtea.eclipticseasons.patch;
 
 
-import com.teamtea.eclipticseasons.compat.CompatModule;
 import com.teamtea.eclipticseasons.patch.config.PatchClientConfig;
 import com.teamtea.eclipticseasons.patch.config.PatchCommonConfig;
 import com.teamtea.eclipticseasons.patch.data.PatchData;
@@ -10,9 +9,6 @@ import net.minecraft.resources.ResourceLocation;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
-import net.neoforged.fml.ModLoadingContext;
-import net.neoforged.fml.ModLoadingException;
-import net.neoforged.fml.ModLoadingIssue;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -129,7 +125,6 @@ public class EclipticSeasonsPatch {
     }
 
     public void FMLCommonSetup(final FMLCommonSetupEvent event) {
-        PatchCore.run();
     }
 
     public void gatherData(final GatherDataEvent event) {

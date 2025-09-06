@@ -9,4 +9,7 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface ESPatch {
     String[] mods() default {};
+    String[] minVersions() default {};
+
+    String esVersion() default "";
 }

@@ -4,7 +4,7 @@ import com.teamtea.eclipticseasons.patch.api.ESPatch;
 import com.teamtea.eclipticseasons.patch.api.IESModPatch;
 import net.neoforged.neoforge.common.ModConfigSpec;
 
-@ESPatch(mods = "incontrol")
+@ESPatch(mods = "incontrol", esVersion = "0.12.0-pre4-1")
 public class IC implements IESModPatch {
 
     @Override

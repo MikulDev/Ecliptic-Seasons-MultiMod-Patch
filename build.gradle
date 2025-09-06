@@ -145,7 +145,7 @@ dependencies {
     runtimeOnly("curse.maven:jei-238222:5846880")
     runtimeOnly("curse.maven:jade-324717:5591256")
 
-    implementation("curse.maven:ecliptic-seasons-1118306:6922600")
+    implementation("curse.maven:ecliptic-seasons-1118306:6967682")
 
     onlyMainRuntimeOnly("curse.maven:irisshaders-455508:6213632")
     onlyMainRuntimeOnly "maven.modrinth:sodium:mc1.21.1-0.6.9-neoforge"
@@ -168,6 +168,7 @@ dependencies {
 //    onlyMainRuntimeOnly "curse.maven:haunted-harvest-541753:6759795"
 
     compileOnly "curse.maven:touhou-little-maid-355044:6175338"
+    onlyMainRuntimeOnly "curse.maven:touhou-little-maid-355044:6175338"
 
     compileOnly("curse.maven:simple-clouds-1121215:5812034")
     compileOnly("curse.maven:cold-sweat-506194:6176789")

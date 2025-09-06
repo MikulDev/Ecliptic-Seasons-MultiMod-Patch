@@ -9,7 +9,7 @@ import net.minecraft.world.entity.ai.memory.MemoryModuleType;
 
 import java.util.List;
 
-// @LittleMaidExtension
+@LittleMaidExtension
 public class LittleMaidPlugin implements ILittleMaid {
     @Override
     public void addMaidTask(TaskManager manager) {
