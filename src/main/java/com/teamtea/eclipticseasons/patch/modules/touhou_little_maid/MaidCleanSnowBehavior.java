@@ -30,35 +30,14 @@ public class MaidCleanSnowBehavior extends MaidFarmPlantTask {
     protected void start(ServerLevel world, EntityMaid maid, long gameTimeIn) {
         maid.getBrain().getMemory(InitEntities.TARGET_POS.get()).ifPresent(posWrapper -> {
             BlockPos basePos = posWrapper.currentBlockPosition();
-            BlockPos cropPos = basePos;
-            BlockState cropState = world.getBlockState(cropPos);
-            if (maid.canDestroyBlock(cropPos) && task.canHarvest(maid, cropPos, cropState)) {
-                task.harvest(maid, cropPos, cropState);
+            BlockState cropState = world.getBlockState(basePos);
+            if (maid.canDestroyBlock(basePos) && task.canHarvest(maid, basePos, cropState)) {
+                task.harvest(maid, basePos, cropState);
                 maid.swing(InteractionHand.MAIN_HAND);
                 maid.getBrain().eraseMemory(InitEntities.TARGET_POS.get());
                 maid.getBrain().eraseMemory(MemoryModuleType.WALK_TARGET);
                 if (maid.getOwner() instanceof ServerPlayer serverPlayer) {
                     InitTrigger.MAID_EVENT.trigger(serverPlayer, TriggerType.MAID_FARM);
-                }
-            }
-
-            CombinedInvWrapper availableInv = maid.getAvailableInv(true);
-            List<Integer> slots = ItemsUtil.getFilterStackSlots(availableInv, task::isSeed);
-            if (!slots.isEmpty()) {
-                for (int slot : slots) {
-                    ItemStack seed = availableInv.getStackInSlot(slot);
-                    BlockState baseState = world.getBlockState(basePos);
-                    if (task.canPlant(maid, basePos, baseState, seed)) {
-                        ItemStack remain = task.plant(maid, basePos, baseState, seed);
-                        availableInv.setStackInSlot(slot, remain);
-                        maid.swing(InteractionHand.MAIN_HAND);
-                        maid.getBrain().eraseMemory(InitEntities.TARGET_POS.get());
-                        maid.getBrain().eraseMemory(MemoryModuleType.WALK_TARGET);
-                        if (maid.getOwner() instanceof ServerPlayer serverPlayer) {
-                            InitTrigger.MAID_EVENT.trigger(serverPlayer, TriggerType.MAID_FARM);
-                        }
-                        return;
-                    }
                 }
             }
         });

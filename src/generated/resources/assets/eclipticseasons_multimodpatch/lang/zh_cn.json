@@ -1,4 +1,6 @@
 {
+  "error.eclipticseasons_multimodpatch.version.eclipticseasons.min": "§f[Ecliptic Seasons (节气)] 版本不兼容！修补模块 §e%s§f 需要 Ecliptic Seasons 版本 §a%s§f 或更高（当前为 §c%s§f）§r",
+  "error.eclipticseasons_multimodpatch.version.mods.min": "§f[Patch Module] %s 前置版本不兼容！需要 §a%s§f 或更高版本（当前为 §e%s§f）§r",
   "quest.eclipticseasons_multimodpatch.autumn.autumn_core.complete.description": "金黄的田野向你致敬，秋风唱着感激的旋律。$(n)你完成了 $(autumn)秋季$()的试炼，收获了它最美的馈赠。$(n)$(n)这是 $(autumn)秋之实$()，沉甸甸的心髓，是自然的礼赞。$(n)请收下这份由你亲手播下、又亲手收割的荣耀。",
   "quest.eclipticseasons_multimodpatch.autumn.autumn_core.complete.title": "秋之实",
   "quest.eclipticseasons_multimodpatch.autumn.autumn_core.start.description": "落叶飘零，风吹过田野，带来丰收的歌谣。$(n)你准备好迎接 $(autumn)秋之契约$()了吗？$(n)$(n)去吧，收集 $(autumn)64 个秋季作物种子$()。$(n)让这片土地在你的指尖下进入它的黄金时代。",
@@ -15,7 +17,8 @@
   "quest.eclipticseasons_multimodpatch.winter.winter_core.complete.title": "冬之命",
   "quest.eclipticseasons_multimodpatch.winter.winter_core.start.description": "白雪覆盖了大地，却也为新生留出空白。$(n)这是一场静谧中的挑战——你能唤醒 $(winter)冬之沉眠$()吗？$(n)$(n)收集 $(winter)64 个冬季作物种子$()，为寒冷中的生命种下希望。$(n)在最冷的季节，播种最温暖的光。",
   "quest.eclipticseasons_multimodpatch.winter.winter_core.start.title": "冬之眠",
-  "task.eclipticseasons.clean_snow": "扫雪",
-  "task.eclipticseasons.clean_snow.condition.has_broom": "持有扫帚",
-  "task.eclipticseasons.clean_snow.desc": "适用于节气的覆雪方块"
+  "task.eclipticseasons_multimodpatch.clean_snow": "扫雪",
+  "task.eclipticseasons_multimodpatch.clean_snow.condition.broom_work": "雪会落到世界上",
+  "task.eclipticseasons_multimodpatch.clean_snow.condition.has_broom": "持有扫帚",
+  "task.eclipticseasons_multimodpatch.clean_snow.desc": "适用于节气的覆雪方块"
 }

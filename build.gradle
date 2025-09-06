@@ -208,7 +208,7 @@ dependencies {
     }
     implementation fg.deobf("curse.maven:jei-238222:5846810")
     implementation fg.deobf("curse.maven:jade-324717:4654448")
-    implementation fg.deobf("curse.maven:ecliptic-seasons-1118306:6922588")
+    implementation fg.deobf("curse.maven:ecliptic-seasons-1118306:6965748")
 
     onlyMainRuntimeOnly fg.deobf("curse.maven:embeddium-908741:5681725")
     onlyMainRuntimeOnly fg.deobf("curse.maven:oculus-581495:6020952")
@@ -233,7 +233,7 @@ dependencies {
     compileOnly fg.deobf("curse.maven:journeymap-32274:4873863")
 
     compileOnly fg.deobf("curse.maven:touhou-little-maid-355044:6120178")
-//    onlyMainRuntimeOnly fg.deobf("curse.maven:touhou-little-maid-355044:6120178")
+    onlyMainRuntimeOnly fg.deobf("curse.maven:touhou-little-maid-355044:6120178")
 
     compileOnly fg.deobf("curse.maven:ambientsounds-254284:6570130")
     onlyMainRuntimeOnly fg.deobf("curse.maven:ambientsounds-254284:6570130")

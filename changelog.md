@@ -1,1 +1,1 @@
-update to support incontrol 9.4
+resupport touhou_little_maid

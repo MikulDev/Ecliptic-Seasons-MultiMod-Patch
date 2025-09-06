@@ -70,8 +70,6 @@ public class MaidSnowyBlockMoveBehavior extends MaidMoveToBlockTask {
                             maid.getBrain().setMemory((MemoryModuleType) InitEntities.TARGET_POS.get(), new BlockPosTracker(mutableBlockPos));
                             this.currentWorkPos = mutableBlockPos;
                             this.setNextCheckTickCount(5);
-                            // ChatBubbleManger.addInnerChatText(maid, mutableBlockPos.toString() + "****" + mutableBlockPos.distToCenterSqr(maid.position()));
-
                             return;
                         }
                     }

@@ -3,9 +3,8 @@ package com.teamtea.eclipticseasons.patch.modules.touhou_little_maid;
 import com.teamtea.eclipticseasons.patch.api.ESPatch;
 import com.teamtea.eclipticseasons.patch.api.IESModPatch;
 import net.minecraftforge.common.ForgeConfigSpec;
-import net.minecraftforge.eventbus.api.IEventBus;
 
-@ESPatch(mods = "touhou_little_maid")
+@ESPatch(mods = "touhou_little_maid", esVersion = "0.12.0-pre13")
 public class TLM implements IESModPatch {
 
     @Override

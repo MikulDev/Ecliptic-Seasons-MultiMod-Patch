@@ -9,6 +9,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.fml.LoadingFailedException;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
@@ -124,7 +125,7 @@ public class EclipticSeasonsPatch {
     }
 
     public void FMLCommonSetup(final FMLCommonSetupEvent event) {
-        PatchCore.run();
+
     }
 
     public void gatherData(final GatherDataEvent event) {
