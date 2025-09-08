@@ -5,6 +5,9 @@
   "refmap": "eclipticseasons_multimodpatch.refmap.json",
   "mixins": [
     "modules.cold_sweat.MixinWorldHelper",
+    "modules.goety.MixinBundle$LichEvents",
+    "modules.goety.MixinBundle$MobUtil",
+    "modules.goety.MixinBundle$WitchRobeInventory",
     "modules.hauntedharvest.MixinHauntedHarvest",
     "modules.incontrol.MixinGenericAttributeMapFactory",
     "modules.incontrol.MixinGenericRuleEvaluator",
@@ -14,8 +17,8 @@
     "modules.snowyspirit.MixinSnowySpiritGroundStatus"
   ],
   "client": [
-    "modules.ambientsounds.MixinBiomeEnvironment",
     "modules.ambientsounds.MixinAmbientEnvironment",
+    "modules.ambientsounds.MixinBiomeEnvironment",
     "modules.journeymap.MixinBlockMD",
     "modules.journeymap.MixinMapPlayerTask",
     "modules.particlerain.MixinWeatherParticleSpawner",

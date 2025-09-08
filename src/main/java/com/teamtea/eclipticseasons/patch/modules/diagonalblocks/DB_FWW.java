@@ -2,11 +2,8 @@ package com.teamtea.eclipticseasons.patch.modules.diagonalblocks;
 
 import com.teamtea.eclipticseasons.patch.api.ESPatch;
 import com.teamtea.eclipticseasons.patch.api.IESModPatch;
-import com.teamtea.eclipticseasons.patch.modules.cold_sweat.Cold_Sweat;
 import net.minecraftforge.common.ForgeConfigSpec;
 import net.minecraftforge.eventbus.api.IEventBus;
-
-import java.util.List;
 
 @ESPatch(mods = "diagonalblocks")
 public class DB_FWW implements IESModPatch {
@@ -18,7 +15,7 @@ public class DB_FWW implements IESModPatch {
 
     @Override
     public void register(IEventBus gameBus, IEventBus modEventBus) {
-        gameBus.register(DiagonalBlocksHanlder.INSTANCE);
+        gameBus.register(DiagonalBlocksHandler.INSTANCE);
     }
 
     public static class Config {

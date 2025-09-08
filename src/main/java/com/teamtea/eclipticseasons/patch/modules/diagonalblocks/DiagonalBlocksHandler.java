@@ -16,11 +16,12 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.Map;
 import java.util.Set;
 
-public class DiagonalBlocksHanlder {
-    public static final DiagonalBlocksHanlder INSTANCE = new DiagonalBlocksHanlder();
+public class DiagonalBlocksHandler {
+    public static final DiagonalBlocksHandler INSTANCE = new DiagonalBlocksHandler();
 
     @SubscribeEvent(priority = EventPriority.LOW)
     public void onTagsUpdatedEvent(TagsUpdatedEvent tagsUpdatedEvent) {
+        if (!DB_FWW.Config.enable.get()) return;
         try {
             Class<?> clazz = Class.forName("fuzs.diagonalblocks.api.v2.DiagonalBlockType");
             Set<?> types = (Set<?>) clazz.getField("TYPES").get(null);
