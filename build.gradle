@@ -183,6 +183,9 @@ dependencies {
     onlyMainRuntimeOnly "curse.maven:puzzles-lib-495476:6874068"
     onlyMainRuntimeOnly "curse.maven:diagonal-walls-969422:5918894"
 
+    onlyMainRuntimeOnly "curse.maven:architectury-api-419699:5786327"
+    onlyMainRuntimeOnly "maven.modrinth:fetzis-asian-decoration:BcmCikhC"
+
     println("----Scan onlyMainRuntimeOnly libs begin----")
     fileTree(dir: 'libs', include: ['*.jar']).each { File file ->
         def fileName = file.name

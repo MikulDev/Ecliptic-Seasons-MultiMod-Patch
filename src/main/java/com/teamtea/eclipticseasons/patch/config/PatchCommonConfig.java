@@ -20,5 +20,16 @@ public class PatchCommonConfig {
         }
     }
 
+    public static boolean validSeason(Object o) {
+        if (o instanceof String s) {
+            try {
+                com.teamtea.eclipticseasons.api.constant.solar.Season.valueOf(s);
+                return true;
+            } catch (IllegalArgumentException ignored) {
+            }
+        }
+        return false;
+    }
+
 }
 

@@ -16,8 +16,8 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.Map;
 import java.util.Set;
 
-public class DiagonalBlocksHanlder {
-    public static final DiagonalBlocksHanlder INSTANCE = new DiagonalBlocksHanlder();
+public class DiagonalBlocksHandler {
+    public static final DiagonalBlocksHandler INSTANCE = new DiagonalBlocksHandler();
 
     @SubscribeEvent(priority = EventPriority.LOW)
     public void onTagsUpdatedEvent(TagsUpdatedEvent tagsUpdatedEvent) {
