@@ -273,10 +273,12 @@ dependencies {
     onlyMainRuntimeOnly fg.deobf("maven.modrinth:fetzis-asian-decoration:AF34H2ZW")
 
     compileOnly fg.deobf("curse.maven:goety-586095:6778940")
-    onlyMainRuntimeOnly fg.deobf("curse.maven:goety-586095:6778940")
-    onlyMainRuntimeOnly fg.deobf("curse.maven:curios-309927:6418456")
+//    onlyMainRuntimeOnly fg.deobf("curse.maven:goety-586095:6778940")
+//    onlyMainRuntimeOnly fg.deobf("curse.maven:curios-309927:6418456")
 
     onlyMainRuntimeOnly fg.deobf("curse.maven:domum-ornamentum-527361:6870756")
+
+    compileOnly fg.deobf("curse.maven:enhanced-celestials-438447:6318263")
 
     println("----Scan libs begin----")
     fileTree(dir: 'libs', include: ['*.jar']).each { File file ->
