@@ -45,7 +45,7 @@ public class DiagonalBlocksHandler {
                 biMap.forEach((block, block2) -> {
                     if (block instanceof WallBlock
                             && DB_FWW.Config.wall.get()) {
-                        SnowChecker.SNOW_DEFINITION_MAP.put(
+                        SnowChecker.SNOW_DEFINITION_MAP.putIfAbsent(
                                 block2, SnowDefinition.builder()
                                         .blocks(HolderSet.direct(block2.builtInRegistryHolder()))
                                         .info(info)
@@ -53,7 +53,7 @@ public class DiagonalBlocksHandler {
                         );
                     } else if (block instanceof FenceBlock
                             && DB_FWW.Config.fence.get()) {
-                        SnowChecker.SNOW_DEFINITION_MAP.put(
+                        SnowChecker.SNOW_DEFINITION_MAP.putIfAbsent(
                                 block2, SnowDefinition.builder()
                                         .blocks(HolderSet.direct(block2.builtInRegistryHolder()))
                                         .info(info)

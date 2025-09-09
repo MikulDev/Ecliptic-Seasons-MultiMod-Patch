@@ -1,1 +1,1 @@
-resupport touhou_little_maid
+add mixin for geoty

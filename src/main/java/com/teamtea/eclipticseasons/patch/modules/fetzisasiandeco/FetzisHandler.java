@@ -6,6 +6,7 @@ import com.teamtea.eclipticseasons.common.core.snow.SnowChecker;
 import com.teamtea.eclipticseasons.patch.EclipticSeasonsPatch;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderSet;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.StairBlock;
 import net.minecraftforge.event.TagsUpdatedEvent;
@@ -50,6 +51,26 @@ public class FetzisHandler {
                     checkif(classesSolid, block, block.builtInRegistryHolder(), infoSolid);
                 }
             }
+
+            for (Holder.Reference<Block> holder : BuiltInRegistries.BLOCK.holders().toList()) {
+                String string = holder.key().location().toString();
+                if(!string.contains("tile")&&!string.contains("roof")
+                        &&!string.contains("shed")
+                        &&!string.contains("ramp")
+                        &&!string.contains("fence")
+                        &&!string.contains("side_slab")
+                        &&!string.contains("umbrella")
+                        &&!string.contains("shingle")
+                )continue;
+
+                Block block = holder.get();
+                SnowChecker.SNOW_DEFINITION_MAP.putIfAbsent(block, SnowDefinition.builder()
+                        .blocks(HolderSet.direct(holder))
+                        .info(block.defaultBlockState().blocksMotion()?
+                                infoSolid:info)
+                        .build()
+                );
+            }
             long end = System.nanoTime();
             long elapsedMs = (end - start) / 1_000_000;
             EclipticSeasonsPatch.logger("[FetzisHandler x SnowDefinition] Registry scan took " + elapsedMs + " ms");
@@ -63,7 +84,7 @@ public class FetzisHandler {
     private static boolean checkif(Set<Class<?>> classesSolid, Block block, Holder<Block> holder, SnowDefinition.Info infoSolid) {
         for (Class<?> aClass : classesSolid) {
             if (aClass.isInstance(block)) {
-                SnowChecker.SNOW_DEFINITION_MAP.put(block, SnowDefinition.builder()
+                SnowChecker.SNOW_DEFINITION_MAP.putIfAbsent(block, SnowDefinition.builder()
                         .blocks(HolderSet.direct(holder))
                         .info(infoSolid)
                         .build()

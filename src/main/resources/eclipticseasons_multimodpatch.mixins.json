@@ -5,6 +5,7 @@
   "refmap": "eclipticseasons_multimodpatch.refmap.json",
   "mixins": [
     "modules.cold_sweat.MixinWorldHelper",
+    "modules.fetzisasiandeco.MixinBundle$ExtraModelManagers",
     "modules.goety.MixinBundle$LichEvents",
     "modules.goety.MixinBundle$MobUtil",
     "modules.goety.MixinBundle$WitchRobeInventory",
@@ -19,6 +20,7 @@
   "client": [
     "modules.ambientsounds.MixinAmbientEnvironment",
     "modules.ambientsounds.MixinBiomeEnvironment",
+    "modules.fetzisasiandeco.MixinBundle$ssasx",
     "modules.journeymap.MixinBlockMD",
     "modules.journeymap.MixinMapPlayerTask",
     "modules.particlerain.MixinWeatherParticleSpawner",
