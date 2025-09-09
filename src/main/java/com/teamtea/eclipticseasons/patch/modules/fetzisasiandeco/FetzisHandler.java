@@ -22,6 +22,7 @@ public class FetzisHandler {
     @SubscribeEvent(priority = EventPriority.LOW)
     @SuppressWarnings("unchecked")
     public void onTagsUpdatedEvent(TagsUpdatedEvent tagsUpdatedEvent) {
+        if(!FAD.Config.enable.get())return;
         try {
             long start = System.nanoTime();
             String packageName = "io.github.lordfetzi.blocks";

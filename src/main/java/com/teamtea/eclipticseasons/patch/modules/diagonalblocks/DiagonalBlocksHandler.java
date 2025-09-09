@@ -21,6 +21,7 @@ public class DiagonalBlocksHandler {
 
     @SubscribeEvent(priority = EventPriority.LOW)
     public void onTagsUpdatedEvent(TagsUpdatedEvent tagsUpdatedEvent) {
+        if(!DB_FWW.Config.enable.get())return;
         try {
             Class<?> clazz = Class.forName("fuzs.diagonalblocks.api.v2.DiagonalBlockType");
             Set<?> types = (Set<?>) clazz.getField("TYPES").get(null);

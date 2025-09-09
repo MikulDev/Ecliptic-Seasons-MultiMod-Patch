@@ -186,6 +186,8 @@ dependencies {
     onlyMainRuntimeOnly "curse.maven:architectury-api-419699:5786327"
     onlyMainRuntimeOnly "maven.modrinth:fetzis-asian-decoration:BcmCikhC"
 
+    compileOnly "curse.maven:enhanced-celestials-438447:6849257"
+
     println("----Scan onlyMainRuntimeOnly libs begin----")
     fileTree(dir: 'libs', include: ['*.jar']).each { File file ->
         def fileName = file.name
