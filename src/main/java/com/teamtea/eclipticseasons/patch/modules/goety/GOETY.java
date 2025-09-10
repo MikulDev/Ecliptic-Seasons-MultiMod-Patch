@@ -15,10 +15,12 @@ public class GOETY implements IESModPatch {
     public static class Config {
 
         public static ForgeConfigSpec.BooleanValue enable;
+        public static ForgeConfigSpec.BooleanValue fakeSeason;
 
         public static void load(ForgeConfigSpec.Builder builder) {
             builder.comment("Goety").push("goety");
             enable = builder.define("Enable", true);
+            fakeSeason = builder.define("FakeSeasonsLoaded", true);
             builder.pop();
         }
     }
