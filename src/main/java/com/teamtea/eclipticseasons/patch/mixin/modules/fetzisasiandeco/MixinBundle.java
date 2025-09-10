@@ -45,7 +45,7 @@ public abstract class MixinBundle {
 
         @WrapOperation(at = {@At(value = "INVOKE",
                 target = "Lnet/minecraft/client/renderer/block/model/BakedQuad;getDirection()Lnet/minecraft/core/Direction;")},
-                remap = false, method = {"makeSnowyBakedQuads"})
+                 method = {"makeSnowyBakedQuads"})
         private static Direction es_patch$makeSnowyBakedQuads2
                 (BakedQuad instance, Operation<Direction> original) {
             int[] vertices = instance.getVertices();
