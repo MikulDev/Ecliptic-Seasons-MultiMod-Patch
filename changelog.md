@@ -1,2 +1,3 @@
 add mixin for geoty
-add mixin for enhanced-celestials
+
+add for yuushya and domum_ornamentum

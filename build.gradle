@@ -216,7 +216,7 @@ dependencies {
     }
     implementation fg.deobf("curse.maven:jei-238222:5846810")
     implementation fg.deobf("curse.maven:jade-324717:4654448")
-    compileOnly fg.deobf("curse.maven:ecliptic-seasons-1118306:6972419")
+    implementation fg.deobf("curse.maven:ecliptic-seasons-1118306:6982855")
 
     onlyMainRuntimeOnly fg.deobf("curse.maven:embeddium-908741:5681725")
     onlyMainRuntimeOnly fg.deobf("curse.maven:oculus-581495:6020952")
@@ -278,7 +278,8 @@ dependencies {
 
     onlyMainRuntimeOnly fg.deobf("curse.maven:domum-ornamentum-527361:6870756")
 
-    compileOnly fg.deobf("curse.maven:enhanced-celestials-438447:6318263")
+    onlyMainRuntimeOnly fg.deobf("curse.maven:yuushya-townscape-533104:6393938")
+    onlyMainRuntimeOnly fg.deobf("curse.maven:wishing-fountain-1255471:6873585")
 
     println("----Scan libs begin----")
     fileTree(dir: 'libs', include: ['*.jar']).each { File file ->

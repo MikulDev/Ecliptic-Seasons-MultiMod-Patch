@@ -49,15 +49,15 @@ public abstract class MixinThunderBundle {
             return original.call(instance);
         }
 
-        @WrapOperation(at = {@At(value = "INVOKE", target = "Lnet/minecraft/server/level/ServerLevel;setWeatherParameters(IIZZ)V")},
-                method = {"tick"})
-        private void es_patch$tick_setWeatherParameters(ServerLevel instance, int pClearTime, int pWeatherTime, boolean pIsRaining, boolean pIsThundering, Operation<Void> original) {
-            if (GOETY.Config.enable.get() && EclipticSeasonsApi.getInstance().hasLocalWeather(instance)) {
-                GOETY_Hook.setIfHasLocalWeather(instance, pClearTime, pWeatherTime, blockPosition());
-                return;
-            }
-            original.call(instance, pClearTime, pWeatherTime, pIsRaining, pIsThundering);
-        }
+        // @WrapOperation(at = {@At(value = "INVOKE", target = "Lnet/minecraft/server/level/ServerLevel;setWeatherParameters(IIZZ)V")},
+        //         method = {"tick"})
+        // private void es_patch$tick_setWeatherParameters(ServerLevel instance, int pClearTime, int pWeatherTime, boolean pIsRaining, boolean pIsThundering, Operation<Void> original) {
+        //     if (GOETY.Config.enable.get() && EclipticSeasonsApi.getInstance().hasLocalWeather(instance)) {
+        //         GOETY_Hook.setIfHasLocalWeather(instance, pClearTime, pWeatherTime, blockPosition());
+        //         return;
+        //     }
+        //     original.call(instance, pClearTime, pWeatherTime, pIsRaining, pIsThundering);
+        // }
     }
 
     @Mixin({com.Polarice3.Goety.common.effects.ElectrifiedEffect.class})
@@ -174,15 +174,15 @@ public abstract class MixinThunderBundle {
             return original.call(instance);
         }
 
-        @WrapOperation(at = {@At(value = "INVOKE", target = "Lnet/minecraft/server/level/ServerLevel;setWeatherParameters(IIZZ)V")},
-                method = {"tickDeath", "remove", "aiStep"})
-        private void es_patch$setWeatherParameters(ServerLevel instance, int pClearTime, int pWeatherTime, boolean pIsRaining, boolean pIsThundering, Operation<Void> original) {
-            if (GOETY.Config.enable.get() && EclipticSeasonsApi.getInstance().hasLocalWeather(instance)) {
-                GOETY_Hook.setIfHasLocalWeather(instance, pClearTime, pWeatherTime, blockPosition());
-                return;
-            }
-            original.call(instance, pClearTime, pWeatherTime, pIsRaining, pIsThundering);
-        }
+        // @WrapOperation(at = {@At(value = "INVOKE", target = "Lnet/minecraft/server/level/ServerLevel;setWeatherParameters(IIZZ)V")},
+        //         method = {"tickDeath", "remove", "aiStep"})
+        // private void es_patch$setWeatherParameters(ServerLevel instance, int pClearTime, int pWeatherTime, boolean pIsRaining, boolean pIsThundering, Operation<Void> original) {
+        //     if (GOETY.Config.enable.get() && EclipticSeasonsApi.getInstance().hasLocalWeather(instance)) {
+        //         GOETY_Hook.setIfHasLocalWeather(instance, pClearTime, pWeatherTime, blockPosition());
+        //         return;
+        //     }
+        //     original.call(instance, pClearTime, pWeatherTime, pIsRaining, pIsThundering);
+        // }
     }
 
     @Mixin({com.Polarice3.Goety.common.entities.ally.illager.train.ModIllagerType.class})

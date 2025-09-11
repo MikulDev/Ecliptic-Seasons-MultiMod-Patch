@@ -6,7 +6,6 @@ import com.teamtea.eclipticseasons.common.core.snow.SnowChecker;
 import com.teamtea.eclipticseasons.patch.EclipticSeasonsPatch;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderSet;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.StairBlock;
 import net.minecraftforge.event.TagsUpdatedEvent;
@@ -41,8 +40,8 @@ public class FetzisHandler {
             Method iteratorMethod = deferredRegister.getClass().getMethod("iterator");
             Iterator<Supplier<Block>> iterator = (Iterator<Supplier<Block>>) iteratorMethod.invoke(deferredRegister);
 
-            SnowDefinition.Info info = SnowDefinition.Info.builder().snowPassable(true).flag(MapChecker.FLAG_CUSTOM).build();
-            SnowDefinition.Info infoSolid = SnowDefinition.Info.builder().flag(MapChecker.FLAG_CUSTOM).build();
+            SnowDefinition.Info info = SnowDefinition.Info.builder().snowPassable(true).flag(MapChecker.FLAG_CUSTOM_AO).build();
+            SnowDefinition.Info infoSolid = SnowDefinition.Info.builder().flag(MapChecker.FLAG_CUSTOM_AO).build();
 
             while (iterator.hasNext()) {
                 var holder = iterator.next();
@@ -52,25 +51,6 @@ public class FetzisHandler {
                 }
             }
 
-            for (Holder.Reference<Block> holder : BuiltInRegistries.BLOCK.holders().toList()) {
-                String string = holder.key().location().toString();
-                if(!string.contains("tile")&&!string.contains("roof")
-                        &&!string.contains("shed")
-                        &&!string.contains("ramp")
-                        &&!string.contains("fence")
-                        &&!string.contains("side_slab")
-                        &&!string.contains("umbrella")
-                        &&!string.contains("shingle")
-                )continue;
-
-                Block block = holder.get();
-                SnowChecker.SNOW_DEFINITION_MAP.putIfAbsent(block, SnowDefinition.builder()
-                        .blocks(HolderSet.direct(holder))
-                        .info(block.defaultBlockState().blocksMotion()?
-                                infoSolid:info)
-                        .build()
-                );
-            }
             long end = System.nanoTime();
             long elapsedMs = (end - start) / 1_000_000;
             EclipticSeasonsPatch.logger("[FetzisHandler x SnowDefinition] Registry scan took " + elapsedMs + " ms");
