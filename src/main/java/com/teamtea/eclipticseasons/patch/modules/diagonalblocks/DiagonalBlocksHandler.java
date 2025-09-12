@@ -13,6 +13,7 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.neoforge.event.TagsUpdatedEvent;
 
 import java.lang.reflect.InvocationTargetException;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -46,18 +47,18 @@ public class DiagonalBlocksHandler {
                     if (block instanceof WallBlock
                             && DB_FWW.Config.wall.get()) {
                         SnowChecker.SNOW_DEFINITION_MAP.put(
-                                block2, SnowDefinition.builder()
+                                block2,  List.of(SnowDefinition.builder()
                                         .blocks(HolderSet.direct(block2.builtInRegistryHolder()))
                                         .info(info)
-                                        .build()
+                                        .build())
                         );
                     } else if (block instanceof FenceBlock
                             && DB_FWW.Config.fence.get()) {
                         SnowChecker.SNOW_DEFINITION_MAP.put(
-                                block2, SnowDefinition.builder()
+                                block2, List.of( SnowDefinition.builder()
                                         .blocks(HolderSet.direct(block2.builtInRegistryHolder()))
                                         .info(info)
-                                        .build()
+                                        .build())
                         );
                     }
                 });

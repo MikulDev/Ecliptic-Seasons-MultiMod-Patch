@@ -38,7 +38,7 @@ public class FetzisHandler {
             Iterator<Holder<Block>> iterator = (Iterator<Holder<Block>>) iteratorMethod.invoke(deferredRegister);
 
             SnowDefinition.Info info = SnowDefinition.Info.builder().snowPassable(true).flag(MapChecker.FLAG_CUSTOM).build();
-            SnowDefinition.Info infoSolid = SnowDefinition.Info.builder().flag(MapChecker.FLAG_CUSTOM).build();
+            SnowDefinition.Info infoSolid = SnowDefinition.Info.builder().flag(MapChecker.FLAG_CUSTOM_AO).build();
 
             while (iterator.hasNext()) {
                 var holder = iterator.next();
@@ -60,10 +60,10 @@ public class FetzisHandler {
     private static boolean checkif(Set<Class<?>> classesSolid, Block block, Holder<Block> holder, SnowDefinition.Info infoSolid) {
         for (Class<?> aClass : classesSolid) {
             if (aClass.isInstance(block)) {
-                SnowChecker.SNOW_DEFINITION_MAP.put(block, SnowDefinition.builder()
+                SnowChecker.SNOW_DEFINITION_MAP.putIfAbsent(block, List.of(SnowDefinition.builder()
                         .blocks(HolderSet.direct(holder))
                         .info(infoSolid)
-                        .build()
+                        .build())
                 );
                 return true;
             }

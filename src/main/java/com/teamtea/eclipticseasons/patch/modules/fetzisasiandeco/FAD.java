@@ -5,7 +5,7 @@ import com.teamtea.eclipticseasons.patch.api.IESModPatch;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.common.ModConfigSpec;
 
-@ESPatch(mods = "fetzisasiandeco")
+@ESPatch(mods = "fetzisasiandeco",esVersion = "0.12.0-pre15")
 public class FAD implements IESModPatch {
 
     @Override
