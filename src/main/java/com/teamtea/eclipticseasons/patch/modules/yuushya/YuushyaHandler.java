@@ -15,6 +15,7 @@ import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 
 import java.lang.reflect.Field;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.function.Supplier;
@@ -50,32 +51,31 @@ public class YuushyaHandler {
                 if (string.contains("fence")
                         || string.contains("side_slab")
                         || string.contains("handrail")) {
-                    SnowChecker.SNOW_DEFINITION_MAP.putIfAbsent(block, SnowDefinition.builder()
+                    SnowChecker.SNOW_DEFINITION_MAP.putIfAbsent(block,  List.of(SnowDefinition.builder()
                             .blocks(HolderSet.direct(holder))
                             .info(info)
-                            .build()
+                            .build())
                     );
                 } else if (string.contains("half_slab")
-                        || string.contains("umbrella")
-                        || string.contains("shed")
-                        || string.contains("stairs")) {
-                    SnowChecker.SNOW_DEFINITION_MAP.putIfAbsent(block, SnowDefinition.builder()
+                        || string.contains("umbrella")) {
+                    SnowChecker.SNOW_DEFINITION_MAP.putIfAbsent(block, List.of( SnowDefinition.builder()
                             .blocks(HolderSet.direct(holder))
                             .info(infoSolid)
-                            .build()
+                            .build())
                     );
                 } else if (string.contains("ramp")
                         || string.contains("tile")
-                        || string.contains("roof")) {
-                    SnowChecker.SNOW_DEFINITION_MAP.putIfAbsent(block, SnowDefinition.builder()
+                        || string.contains("roof")
+                        || string.contains("stairs")
+                        || string.contains("shed")) {
+                    SnowChecker.SNOW_DEFINITION_MAP.putIfAbsent(block,  List.of(SnowDefinition.builder()
                             .blocks(HolderSet.direct(holder))
                             .info(infoSolidAO)
-                            .build()
+                            .build())
                     );
                 }
-
-
             }
+
             long end = System.nanoTime();
             long elapsedMs = (end - start) / 1_000_000;
             EclipticSeasonsPatch.logger("[Yuushya Townscape x SnowDefinition] Registry scan took " + elapsedMs + " ms");

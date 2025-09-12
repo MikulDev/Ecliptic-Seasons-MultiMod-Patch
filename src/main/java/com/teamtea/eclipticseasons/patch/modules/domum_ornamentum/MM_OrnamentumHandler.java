@@ -14,6 +14,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.registries.DeferredRegister;
 
 import java.lang.reflect.Field;
+import java.util.List;
 import java.util.Map;
 import java.util.function.Supplier;
 
@@ -51,10 +52,10 @@ public class MM_OrnamentumHandler {
                     if (string.contains("shingle")
                 // ||string.contains("pillar")
                 ) {
-                    SnowChecker.SNOW_DEFINITION_MAP.putIfAbsent(block, SnowDefinition.builder()
+                    SnowChecker.SNOW_DEFINITION_MAP.putIfAbsent(block,  List.of(SnowDefinition.builder()
                             .blocks(HolderSet.direct(holder))
                             .info(infoSolidAO)
-                            .build()
+                            .build())
                     );
                 }
 

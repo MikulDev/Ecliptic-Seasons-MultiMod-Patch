@@ -64,10 +64,10 @@ public class FetzisHandler {
     private static boolean checkif(Set<Class<?>> classesSolid, Block block, Holder<Block> holder, SnowDefinition.Info infoSolid) {
         for (Class<?> aClass : classesSolid) {
             if (aClass.isInstance(block)) {
-                SnowChecker.SNOW_DEFINITION_MAP.putIfAbsent(block, SnowDefinition.builder()
+                SnowChecker.SNOW_DEFINITION_MAP.putIfAbsent(block, List.of( SnowDefinition.builder()
                         .blocks(HolderSet.direct(holder))
                         .info(infoSolid)
-                        .build()
+                        .build())
                 );
                 return true;
             }

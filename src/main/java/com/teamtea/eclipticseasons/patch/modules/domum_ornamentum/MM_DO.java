@@ -5,7 +5,7 @@ import com.teamtea.eclipticseasons.patch.api.IESModPatch;
 import net.minecraftforge.common.ForgeConfigSpec;
 import net.minecraftforge.eventbus.api.IEventBus;
 
-@ESPatch(mods = "domum_ornamentum",esVersion = "0.12.0-pre14")
+@ESPatch(mods = "domum_ornamentum",esVersion = "0.12.0-pre15")
 public class MM_DO implements IESModPatch {
 
     @Override

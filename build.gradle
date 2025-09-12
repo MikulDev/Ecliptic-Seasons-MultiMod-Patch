@@ -216,7 +216,7 @@ dependencies {
     }
     implementation fg.deobf("curse.maven:jei-238222:5846810")
     implementation fg.deobf("curse.maven:jade-324717:4654448")
-    implementation fg.deobf("curse.maven:ecliptic-seasons-1118306:6982855")
+    implementation fg.deobf("curse.maven:ecliptic-seasons-1118306:6988250")
 
     onlyMainRuntimeOnly fg.deobf("curse.maven:embeddium-908741:5681725")
     onlyMainRuntimeOnly fg.deobf("curse.maven:oculus-581495:6020952")
@@ -265,9 +265,9 @@ dependencies {
     compileOnly fg.deobf("curse.maven:in-control-257356:6932951")
     onlyMainRuntimeOnly fg.deobf("curse.maven:in-control-257356:6932951")
 
-    onlyMainRuntimeOnly fg.deobf("curse.maven:diagonal-walls-969422:5918171")
-    onlyMainRuntimeOnly fg.deobf("curse.maven:puzzles-lib-495476:6918565")
-    onlyMainRuntimeOnly fg.deobf("curse.maven:diagonal-fences-458048:5918173")
+//    onlyMainRuntimeOnly fg.deobf("curse.maven:diagonal-walls-969422:5918171")
+//    onlyMainRuntimeOnly fg.deobf("curse.maven:puzzles-lib-495476:6918565")
+//    onlyMainRuntimeOnly fg.deobf("curse.maven:diagonal-fences-458048:5918173")
 
     onlyMainRuntimeOnly fg.deobf("curse.maven:architectury-api-419699:5137938")
     onlyMainRuntimeOnly fg.deobf("maven.modrinth:fetzis-asian-decoration:AF34H2ZW")
@@ -279,7 +279,7 @@ dependencies {
     onlyMainRuntimeOnly fg.deobf("curse.maven:domum-ornamentum-527361:6870756")
 
     onlyMainRuntimeOnly fg.deobf("curse.maven:yuushya-townscape-533104:6393938")
-    onlyMainRuntimeOnly fg.deobf("curse.maven:wishing-fountain-1255471:6873585")
+//    onlyMainRuntimeOnly fg.deobf("curse.maven:wishing-fountain-1255471:6873585")
 
     println("----Scan libs begin----")
     fileTree(dir: 'libs', include: ['*.jar']).each { File file ->
