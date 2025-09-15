@@ -20,7 +20,7 @@ public class MM_DO implements IESModPatch {
     public void init() {
         SnowRegistryHolder.add(SnowRegistryHolder.builder()
                 .modId(MOD_ID)
-                .condition(MCW_B.Config.enable::get)
+                .condition(Config.enable::get)
                 .nameMatcher(s -> s.contains("shingle"))
                 .simple(SnowRegistryHolder::getInfoSolidAO)
         );
