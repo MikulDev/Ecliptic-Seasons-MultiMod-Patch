@@ -138,14 +138,15 @@ dependencies {
     // For all intends and purposes: You can treat this dependency as if it is a normal library you would use.
     implementation "net.neoforged:neoforge:${neo_version}"
 
-//    compileOnly(jarJar("io.github.llamalad7:mixinextras-neoforge:0.5.0")) {
-//        jarJar.ranged(it, "[0.5.0,)")
-//    }
+    // others
+    // https://mvnrepository.com/artifact/org.projectlombok/lombok
+    compileOnly 'org.projectlombok:lombok:1.18.38'
+    annotationProcessor 'org.projectlombok:lombok:1.18.38'
 
     runtimeOnly("curse.maven:jei-238222:5846880")
     runtimeOnly("curse.maven:jade-324717:5591256")
 
-    implementation("curse.maven:ecliptic-seasons-1118306:6988262")
+    implementation("curse.maven:ecliptic-seasons-1118306:6996509")
 
     onlyMainRuntimeOnly("curse.maven:irisshaders-455508:6213632")
     onlyMainRuntimeOnly "maven.modrinth:sodium:mc1.21.1-0.6.9-neoforge"
@@ -177,16 +178,26 @@ dependencies {
     onlyMainRuntimeOnly "curse.maven:in-control-257356:6677543"
 
     compileOnly "curse.maven:minecolonies-245506:6844367"
-    implementation "curse.maven:dynamictrees-252818:6611182"
+    compileOnly "curse.maven:dynamictrees-252818:6611182"
+    onlyMainRuntimeOnly "curse.maven:dynamictrees-252818:6611182"
 
-    onlyMainRuntimeOnly "curse.maven:diagonal-fences-458048:5918197"
-    onlyMainRuntimeOnly "curse.maven:puzzles-lib-495476:6874068"
-    onlyMainRuntimeOnly "curse.maven:diagonal-walls-969422:5918894"
+//    onlyMainRuntimeOnly "curse.maven:diagonal-fences-458048:5918197"
+//    onlyMainRuntimeOnly "curse.maven:puzzles-lib-495476:6874068"
+//    onlyMainRuntimeOnly "curse.maven:diagonal-walls-969422:5918894"
 
     onlyMainRuntimeOnly "curse.maven:architectury-api-419699:5786327"
-    onlyMainRuntimeOnly "maven.modrinth:fetzis-asian-decoration:BcmCikhC"
+//    onlyMainRuntimeOnly "maven.modrinth:fetzis-asian-decoration:BcmCikhC"
 
     compileOnly "curse.maven:enhanced-celestials-438447:6849257"
+
+    onlyMainRuntimeOnly "curse.maven:macaws-roofs-352039:6494399"
+    onlyMainRuntimeOnly "curse.maven:macaws-bridges-351725:6543002"
+
+    compileOnly "curse.maven:ambientsounds-254284:6978999"
+    onlyMainRuntimeOnly "curse.maven:ambientsounds-254284:6978999"
+    onlyMainRuntimeOnly "curse.maven:creativecore-257814:6989504"
+
+    onlyMainRuntimeOnly "curse.maven:domum-ornamentum-527361:6870762"
 
     println("----Scan onlyMainRuntimeOnly libs begin----")
     fileTree(dir: 'libs', include: ['*.jar']).each { File file ->
