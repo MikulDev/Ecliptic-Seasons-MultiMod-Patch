@@ -65,7 +65,8 @@ public class YuushyaHandler {
                     );
                 } else if (string.contains("ramp")
                         || string.contains("tile")
-                        || string.contains("roof")
+                        // todo
+                        // || string.contains("roof")
                         || string.contains("stairs")
                         || string.contains("shed")) {
                     SnowChecker.SNOW_DEFINITION_MAP.putIfAbsent(block,  List.of(SnowDefinition.builder()

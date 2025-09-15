@@ -214,9 +214,15 @@ dependencies {
     implementation(jarJar("io.github.llamalad7:mixinextras-forge:0.5.0")) {
         jarJar.ranged(it, "[0.5.0,)")
     }
+
+    // others
+    // https://mvnrepository.com/artifact/org.projectlombok/lombok
+    compileOnly 'org.projectlombok:lombok:1.18.38'
+    annotationProcessor 'org.projectlombok:lombok:1.18.38'
+
     implementation fg.deobf("curse.maven:jei-238222:5846810")
     implementation fg.deobf("curse.maven:jade-324717:4654448")
-    implementation fg.deobf("curse.maven:ecliptic-seasons-1118306:6988250")
+    implementation fg.deobf("curse.maven:ecliptic-seasons-1118306:6996494")
 
     onlyMainRuntimeOnly fg.deobf("curse.maven:embeddium-908741:5681725")
     onlyMainRuntimeOnly fg.deobf("curse.maven:oculus-581495:6020952")
@@ -270,7 +276,7 @@ dependencies {
 //    onlyMainRuntimeOnly fg.deobf("curse.maven:diagonal-fences-458048:5918173")
 
     onlyMainRuntimeOnly fg.deobf("curse.maven:architectury-api-419699:5137938")
-    onlyMainRuntimeOnly fg.deobf("maven.modrinth:fetzis-asian-decoration:AF34H2ZW")
+//    onlyMainRuntimeOnly fg.deobf("maven.modrinth:fetzis-asian-decoration:AF34H2ZW")
 
     compileOnly fg.deobf("curse.maven:goety-586095:6778940")
 //    onlyMainRuntimeOnly fg.deobf("curse.maven:goety-586095:6778940")
@@ -278,8 +284,10 @@ dependencies {
 
     onlyMainRuntimeOnly fg.deobf("curse.maven:domum-ornamentum-527361:6870756")
 
-    onlyMainRuntimeOnly fg.deobf("curse.maven:yuushya-townscape-533104:6393938")
-//    onlyMainRuntimeOnly fg.deobf("curse.maven:wishing-fountain-1255471:6873585")
+//    onlyMainRuntimeOnly fg.deobf("curse.maven:yuushya-townscape-533104:6393938")
+
+    onlyMainRuntimeOnly fg.deobf("curse.maven:macaws-roofs-352039:6494466")
+    onlyMainRuntimeOnly fg.deobf("curse.maven:macaws-bridges-351725:6528751")
 
     println("----Scan libs begin----")
     fileTree(dir: 'libs', include: ['*.jar']).each { File file ->

@@ -93,6 +93,9 @@ public class PatchCore {
 
     public static void register(IEventBus gameBus, IEventBus modEventBus) {
         for (IESModPatch modPlugin : MOD_PLUGINS) {
+            modPlugin.init();
+        }
+        for (IESModPatch modPlugin : MOD_PLUGINS) {
             modPlugin.register(gameBus, modEventBus);
         }
     }

@@ -4,7 +4,7 @@ import com.teamtea.eclipticseasons.patch.api.ESPatch;
 import com.teamtea.eclipticseasons.patch.api.IESModPatch;
 import net.minecraftforge.common.ForgeConfigSpec;
 
-@ESPatch(mods = "ambientsounds")
+@ESPatch(mods = "ambientsounds",esVersion = "0.12.0-pre16")
 public class AS6 implements IESModPatch {
 
     @Override

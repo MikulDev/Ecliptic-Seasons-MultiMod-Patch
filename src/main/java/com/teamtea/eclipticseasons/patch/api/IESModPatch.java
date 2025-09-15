@@ -10,4 +10,6 @@ public interface IESModPatch {
 
     default void register(IEventBus gameBus, IEventBus modEventBus){};
 
+    default void init() {
+    }
 }

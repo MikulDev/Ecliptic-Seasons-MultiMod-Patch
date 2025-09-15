@@ -1,4 +1,4 @@
-package com.teamtea.eclipticseasons.patch.modules.domum_ornamentum;
+package com.teamtea.eclipticseasons.patch.modules.mcwbridges;
 
 import com.teamtea.eclipticseasons.patch.api.ESPatch;
 import com.teamtea.eclipticseasons.patch.api.IESModPatch;
@@ -6,9 +6,9 @@ import com.teamtea.eclipticseasons.patch.api.LangUtil;
 import com.teamtea.eclipticseasons.patch.common.SnowRegistryHolder;
 import net.minecraftforge.common.ForgeConfigSpec;
 
-@ESPatch(mods = MM_DO.MOD_ID, esVersion = "0.12.0-pre15")
-public class MM_DO implements IESModPatch {
-    public static final String MOD_ID = "domum_ornamentum";
+@ESPatch(mods = MCW_B.MOD_ID, esVersion = "0.12.0-pre15")
+public class MCW_B implements IESModPatch {
+    public static final String MOD_ID = "mcwbridges";
 
     @Override
     public void common(ForgeConfigSpec.Builder consumer) {
@@ -20,10 +20,11 @@ public class MM_DO implements IESModPatch {
         SnowRegistryHolder.add(SnowRegistryHolder.builder()
                 .modId(MOD_ID)
                 .condition(Config.enable::get)
-                .nameMatcher(s -> s.contains("shingle"))
-                .simple(SnowRegistryHolder::getInfoSolidAO)
+                .nameMatcher(s -> s.contains("bridge"))
+                .simple(SnowRegistryHolder::getInfoSolid)
         );
     }
+
 
     public static class Config {
 

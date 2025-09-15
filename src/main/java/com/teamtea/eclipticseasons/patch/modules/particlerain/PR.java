@@ -6,6 +6,7 @@ import com.teamtea.eclipticseasons.compat.vanilla.VanillaWeather;
 import com.teamtea.eclipticseasons.config.CommonConfig;
 import com.teamtea.eclipticseasons.patch.api.ESPatch;
 import com.teamtea.eclipticseasons.patch.api.IESModPatch;
+import com.teamtea.eclipticseasons.patch.api.LangUtil;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
@@ -14,8 +15,9 @@ import net.minecraft.world.level.biome.Biome;
 import net.minecraftforge.common.ForgeConfigSpec;
 import net.minecraftforge.common.Tags;
 
-@ESPatch(mods = "particlerain",minVersions = "0.12.0-pre11-1")
+@ESPatch(mods = PR.MOD_ID,minVersions = "0.12.0-pre11-1")
 public class PR implements IESModPatch {
+    public static final String MOD_ID = "particlerain";
 
     @Override
     public void client(ForgeConfigSpec.Builder consumer) {
@@ -28,7 +30,7 @@ public class PR implements IESModPatch {
         public static ForgeConfigSpec.BooleanValue fixSand;
 
         public static void load(ForgeConfigSpec.Builder builder) {
-            builder.comment("Pretty Rain").push("particlerain");
+            builder.comment(LangUtil.getModName(MOD_ID)).push(MOD_ID);
             enable = builder
                     .define("Enable", true);
             fixSand = builder

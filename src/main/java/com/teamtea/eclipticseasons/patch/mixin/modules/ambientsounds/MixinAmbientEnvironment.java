@@ -10,6 +10,7 @@ import com.teamtea.eclipticseasons.api.constant.solar.SolarTerm;
 import com.teamtea.eclipticseasons.api.util.EclipticUtil;
 import com.teamtea.eclipticseasons.common.core.map.MapChecker;
 import com.teamtea.eclipticseasons.patch.modules.ambientsounds.AS6;
+import com.teamtea.eclipticseasons.patch.modules.ambientsounds.AS6_Hook;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.server.level.ServerLevel;
@@ -39,23 +40,7 @@ public abstract class MixinAmbientEnvironment {
             remap = false)
     private float eclipticseasons$SeasonsCompat(Player player, Operation<Float> original, @Local(argsOnly = true) Level level) {
         if (AS6.Config.enable.get()) {
-            BlockPos pos = player.blockPosition();
-            Holder<Biome> biomeHolder = EclipticSeasonsApi.getInstance().hasLocalWeather(level) ?
-                    MapChecker.getSurfaceBiome(level, pos) : level.getBiome(pos);
-            Biome.Precipitation currentPrecipitationAt = EclipticSeasonsApi.getInstance().getCurrentPrecipitationAt(level, pos);
-            float baseTemperature = EclipticUtil.getTemperatureFloat(level, biomeHolder.value(), pos);
-            SolarTerm solarTerm = EclipticSeasonsApi.getInstance().getSolarTerm(level);
-            ISnowTerm snowTerm = SolarTerm.getSnowTerm(biomeHolder.value(), level instanceof ServerLevel, EclipticUtil.getSnowTempChange(level));
-            if (snowTerm.maySnow(solarTerm)) {
-                // baseTemperature = EclipticUtil.getTemperatureFloat(level, biomeHolder.value(), pos);
-                if (currentPrecipitationAt == Biome.Precipitation.SNOW)
-                    baseTemperature = Math.min(baseTemperature,
-                            solarTerm == snowTerm.getStart() ? 0.2f : 0.1f);
-            }
-            this.snowing = currentPrecipitationAt == Biome.Precipitation.SNOW;
-            this.thundering = EclipticSeasonsApi.getInstance().isThundering(level, pos);
-            // this.raining = EclipticSeasonsApi.getInstance().isRainingOrSnowing(level, pos);
-            return baseTemperature;
+            return AS6_Hook.getTempAndFixFlag((AmbientEnvironment) (Object) this, player, level);
         }
         return original.call(player);
     }

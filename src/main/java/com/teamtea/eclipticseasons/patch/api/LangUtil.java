@@ -3,6 +3,7 @@ package com.teamtea.eclipticseasons.patch.api;
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+import com.teamtea.eclipticseasons.compat.Platform;
 import com.teamtea.eclipticseasons.patch.EclipticSeasonsPatch;
 import net.minecraft.util.GsonHelper;
 import org.apache.commons.io.IOUtils;
@@ -71,5 +72,9 @@ public class LangUtil {
         } catch (Exception ignored) {
             return "en_us";
         }
+    }
+
+    public static String getModName(String modId) {
+        return Platform.getModFile(modId).getModFileInfo().getMods().get(0).getDisplayName();
     }
 }
