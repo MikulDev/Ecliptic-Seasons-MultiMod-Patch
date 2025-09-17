@@ -28,7 +28,7 @@ public class PatchCommonConfig {
             } catch (IllegalArgumentException ignored) {
             }
         }
-        return false;
+        return o instanceof com.teamtea.eclipticseasons.api.constant.solar.Season;
     }
 
     public static boolean validSolarTerm(Object o) {
@@ -39,7 +39,7 @@ public class PatchCommonConfig {
             } catch (IllegalArgumentException ignored) {
             }
         }
-        return false;
+        return o instanceof com.teamtea.eclipticseasons.api.constant.solar.SolarTerm;
     }
 
 }
