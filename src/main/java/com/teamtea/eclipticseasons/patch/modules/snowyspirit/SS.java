@@ -3,6 +3,7 @@ package com.teamtea.eclipticseasons.patch.modules.snowyspirit;
 import com.teamtea.eclipticseasons.api.constant.solar.SolarTerm;
 import com.teamtea.eclipticseasons.patch.api.ESPatch;
 import com.teamtea.eclipticseasons.patch.api.IESModPatch;
+import com.teamtea.eclipticseasons.patch.config.PatchCommonConfig;
 import net.neoforged.neoforge.common.ModConfigSpec;
 
 import java.util.List;
@@ -35,7 +36,7 @@ public class SS implements IESModPatch {
                                     SolarTerm.LESSER_COLD,
                                     SolarTerm.GREATER_COLD),
                             () -> SolarTerm.WINTER_SOLSTICE,
-                            o -> o instanceof SolarTerm);
+                            PatchCommonConfig::validSolarTerm);
             builder.pop();
         }
     }

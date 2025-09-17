@@ -3,6 +3,7 @@ package com.teamtea.eclipticseasons.patch.modules.hauntedharvest;
 import com.teamtea.eclipticseasons.api.constant.solar.SolarTerm;
 import com.teamtea.eclipticseasons.patch.api.ESPatch;
 import com.teamtea.eclipticseasons.patch.api.IESModPatch;
+import com.teamtea.eclipticseasons.patch.config.PatchCommonConfig;
 import net.neoforged.neoforge.common.ModConfigSpec;
 
 import java.util.List;
@@ -30,12 +31,12 @@ public class HH implements IESModPatch {
                                     SolarTerm.COLD_DEW,
                                     SolarTerm.FIRST_FROST),
                             () -> SolarTerm.COLD_DEW,
-                            o -> o instanceof SolarTerm);
+                            PatchCommonConfig::validSolarTerm);
             hauntedharvest_mobs_wear_pumpkins_time = builder.comment("Adds custom times in which mobs can wear pumpkins. Leave empty to ignore.")
                     .defineListAllowEmpty(" Mobs Wear Pumpkins Time",
                             () -> List.of(SolarTerm.FIRST_FROST),
                             () -> SolarTerm.FIRST_FROST,
-                            o -> o instanceof SolarTerm);
+                            PatchCommonConfig::validSolarTerm);
             builder.pop();
         }
     }

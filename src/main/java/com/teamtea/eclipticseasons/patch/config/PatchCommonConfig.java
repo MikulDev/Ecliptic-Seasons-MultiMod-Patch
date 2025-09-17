@@ -31,5 +31,16 @@ public class PatchCommonConfig {
         return false;
     }
 
+    public static boolean validSolarTerm(Object o) {
+        if (o instanceof String s) {
+            try {
+                com.teamtea.eclipticseasons.api.constant.solar.SolarTerm.valueOf(s);
+                return true;
+            } catch (IllegalArgumentException ignored) {
+            }
+        }
+        return false;
+    }
+
 }
 
