@@ -20,5 +20,26 @@ public class PatchCommonConfig {
         }
     }
 
+    public static boolean validSeason(Object o) {
+        if (o instanceof String s) {
+            try {
+                com.teamtea.eclipticseasons.api.constant.solar.Season.valueOf(s);
+                return true;
+            } catch (IllegalArgumentException ignored) {
+            }
+        }
+        return o instanceof com.teamtea.eclipticseasons.api.constant.solar.Season;
+    }
+
+    public static boolean validSolarTerm(Object o) {
+        if (o instanceof String s) {
+            try {
+                com.teamtea.eclipticseasons.api.constant.solar.SolarTerm.valueOf(s);
+                return true;
+            } catch (IllegalArgumentException ignored) {
+            }
+        }
+        return o instanceof com.teamtea.eclipticseasons.api.constant.solar.SolarTerm;
+    }
 }
 
