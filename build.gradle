@@ -199,6 +199,15 @@ dependencies {
 
     onlyMainRuntimeOnly "curse.maven:domum-ornamentum-527361:6870762"
 
+    compileOnly "curse.maven:botany-pots-353928:6961242"
+    onlyMainRuntimeOnly "curse.maven:botany-pots-353928:6961242"
+    onlyMainRuntimeOnly "curse.maven:bookshelf-228525:6951065"
+    onlyMainRuntimeOnly "curse.maven:prickle-1023259:6961457"
+    onlyMainRuntimeOnly "curse.maven:botany-trees-411357:6895799"
+
+    compileOnly "curse.maven:bonsai-trees-278993:6976430"
+    onlyMainRuntimeOnly "curse.maven:bonsai-trees-278993:6976430"
+
     println("----Scan onlyMainRuntimeOnly libs begin----")
     fileTree(dir: 'libs', include: ['*.jar']).each { File file ->
         def fileName = file.name

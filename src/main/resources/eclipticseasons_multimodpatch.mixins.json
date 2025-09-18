@@ -5,8 +5,6 @@
   "refmap": "eclipticseasons_multimodpatch.refmap.json",
   "mixins": [
     "modules.cold_sweat.MixinWorldHelper",
-    "modules.enhancedcelestials.MixinBundle$EnhancedCelestialsLunarForecastWorldData",
-    "modules.enhancedcelestials.MixinBundle$SetLunarEventCommand",
     "modules.hauntedharvest.MixinHauntedHarvest",
     "modules.incontrol.MixinGenericAttributeMapFactory",
     "modules.incontrol.MixinGenericRuleEvaluator",
