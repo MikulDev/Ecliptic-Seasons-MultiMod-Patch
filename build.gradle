@@ -208,6 +208,8 @@ dependencies {
     compileOnly "curse.maven:bonsai-trees-278993:6976430"
     onlyMainRuntimeOnly "curse.maven:bonsai-trees-278993:6976430"
 
+    onlyMainRuntimeOnly "curse.maven:ultramarine-1187491:6930907"
+
     println("----Scan onlyMainRuntimeOnly libs begin----")
     fileTree(dir: 'libs', include: ['*.jar']).each { File file ->
         def fileName = file.name
