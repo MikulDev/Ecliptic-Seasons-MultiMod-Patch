@@ -8,7 +8,7 @@ import net.minecraftforge.common.ForgeConfigSpec;
 
 import java.util.List;
 
-@ESPatch(mods = "hauntedharvest")
+@ESPatch(mods = "hauntedharvest",esVersion = "0.12.0-pre19-1")
 public class HH implements IESModPatch {
 
     @Override
@@ -19,8 +19,8 @@ public class HH implements IESModPatch {
     public static class Config {
 
         public static ForgeConfigSpec.BooleanValue enable;
-        public static ForgeConfigSpec.ConfigValue<List<? extends SolarTerm>> hauntedharvest_halloween_time;
-        public static ForgeConfigSpec.ConfigValue<List<? extends SolarTerm>> hauntedharvest_mobs_wear_pumpkins_time;
+        public static ForgeConfigSpec.ConfigValue<List<? extends String>> hauntedharvest_halloween_time;
+        public static ForgeConfigSpec.ConfigValue<List<? extends String>> hauntedharvest_mobs_wear_pumpkins_time;
 
         public static void load(ForgeConfigSpec.Builder builder) {
             builder.comment("Haunted Harvest").push("hauntedharvest");
@@ -28,12 +28,12 @@ public class HH implements IESModPatch {
             hauntedharvest_halloween_time = builder.comment("Solar Terms in which Haunted Harvest villager AI behaviors will be active.")
                     .defineListAllowEmpty("Halloween Time",
                             () -> List.of(
-                                    SolarTerm.COLD_DEW,
-                                    SolarTerm.FIRST_FROST),
+                                    SolarTerm.COLD_DEW.toString(),
+                                    SolarTerm.FIRST_FROST.toString()),
                             PatchCommonConfig::validSolarTerm);
             hauntedharvest_mobs_wear_pumpkins_time = builder.comment("Adds custom times in which mobs can wear pumpkins. Leave empty to ignore.")
                     .defineListAllowEmpty(" Mobs Wear Pumpkins Time",
-                            () -> List.of(SolarTerm.FIRST_FROST),
+                            () -> List.of(SolarTerm.FIRST_FROST.toString()),
                             PatchCommonConfig::validSolarTerm);
             builder.pop();
         }
