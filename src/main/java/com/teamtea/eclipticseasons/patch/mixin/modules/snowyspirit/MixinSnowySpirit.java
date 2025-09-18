@@ -3,6 +3,7 @@ package com.teamtea.eclipticseasons.patch.mixin.modules.snowyspirit;
 
 import com.teamtea.eclipticseasons.api.EclipticSeasonsApi;
 import com.teamtea.eclipticseasons.compat.CompatModule;
+import com.teamtea.eclipticseasons.config.CommonConfig;
 import com.teamtea.eclipticseasons.patch.modules.snowyspirit.SS;
 import net.mehvahdjukaar.snowyspirit.SnowySpirit;
 import net.minecraft.world.level.Level;
@@ -19,7 +20,7 @@ public abstract class MixinSnowySpirit {
             remap = false, cancellable = true)
     private static void eclipticseasons$isChristmasSeason(Level level, CallbackInfoReturnable<Boolean> cir) {
         if (SS.Config.enable.get() && SS.Config.specialTime.get())
-            cir.setReturnValue(SS.Config.snowyspirit_winters.get().contains(EclipticSeasonsApi.getInstance().getSolarTerm(level)));
+            cir.setReturnValue(CommonConfig.castSolarTerms(SS.Config.snowyspirit_winters.get()).contains(EclipticSeasonsApi.getInstance().getSolarTerm(level)));
     }
 
 }

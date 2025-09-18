@@ -1,6 +1,7 @@
 package com.teamtea.eclipticseasons.patch.modules.snowyspirit;
 
 import com.teamtea.eclipticseasons.api.constant.solar.SolarTerm;
+import com.teamtea.eclipticseasons.config.CommonConfig;
 import com.teamtea.eclipticseasons.patch.api.ESPatch;
 import com.teamtea.eclipticseasons.patch.api.IESModPatch;
 import com.teamtea.eclipticseasons.patch.config.PatchCommonConfig;
@@ -8,7 +9,7 @@ import net.neoforged.neoforge.common.ModConfigSpec;
 
 import java.util.List;
 
-@ESPatch(mods = "snowyspirit")
+@ESPatch(mods = "snowyspirit", esVersion = "0.12.0-pre19-1")
 public class SS implements IESModPatch {
 
     @Override
@@ -19,7 +20,7 @@ public class SS implements IESModPatch {
     public static class Config {
 
         public static ModConfigSpec.BooleanValue enable;
-        public static ModConfigSpec.ConfigValue<List<? extends SolarTerm>> snowyspirit_winters;
+        public static ModConfigSpec.ConfigValue<List<? extends String>> snowyspirit_winters;
         public static ModConfigSpec.BooleanValue specialTime;
 
         public static void load(ModConfigSpec.Builder builder) {
@@ -29,14 +30,14 @@ public class SS implements IESModPatch {
                     .define("SpecialTime", true);
             snowyspirit_winters = builder.comment("Solar Terms in which Snowy Spirit villager AI behaviors will be active.")
                     .defineListAllowEmpty("WinterTime",
-                            () -> List.of(SolarTerm.BEGINNING_OF_WINTER,
-                                    SolarTerm.LIGHT_SNOW,
-                                    SolarTerm.HEAVY_SNOW,
-                                    SolarTerm.WINTER_SOLSTICE,
-                                    SolarTerm.LESSER_COLD,
-                                    SolarTerm.GREATER_COLD),
-                            () -> SolarTerm.WINTER_SOLSTICE,
-                            PatchCommonConfig::validSolarTerm);
+                            () -> List.of(SolarTerm.BEGINNING_OF_WINTER.toString(),
+                                    SolarTerm.LIGHT_SNOW.toString(),
+                                    SolarTerm.HEAVY_SNOW.toString(),
+                                    SolarTerm.WINTER_SOLSTICE.toString(),
+                                    SolarTerm.LESSER_COLD.toString(),
+                                    SolarTerm.GREATER_COLD.toString()),
+                            SolarTerm.WINTER_SOLSTICE::toString,
+                            CommonConfig::validSolarTerm);
             builder.pop();
         }
     }
