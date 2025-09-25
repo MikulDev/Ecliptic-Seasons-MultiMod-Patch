@@ -1,6 +1,7 @@
 package com.teamtea.eclipticseasons.patch.modules.particlerain;
 
 import com.teamtea.eclipticseasons.api.EclipticSeasonsApi;
+import com.teamtea.eclipticseasons.api.util.EclipticUtil;
 import com.teamtea.eclipticseasons.common.core.biome.WeatherManager;
 import com.teamtea.eclipticseasons.compat.vanilla.VanillaWeather;
 import com.teamtea.eclipticseasons.config.CommonConfig;
@@ -44,8 +45,8 @@ public class PR implements IESModPatch {
         public static Biome.Precipitation getPrecipitation(Biome instance, BlockPos pos, ClientLevel level, Holder<Biome> biomeHolder) {
             boolean hasLocalWeather = EclipticSeasonsApi.getInstance().hasLocalWeather(level);
             Biome.Precipitation precipitationAt = hasLocalWeather ?
-                    WeatherManager.getPrecipitationAt(level, instance, pos) :
-                    VanillaWeather.handlePrecipitationAt(level, instance, pos);
+                    EclipticUtil.getRainOrSnow(level, instance, pos) :
+                    VanillaWeather.getRainOrSnow(level, instance, pos);
             if (!CommonConfig.Weather.notRainInDesert.get()
                     && Config.fixSand.get() && precipitationAt == Biome.Precipitation.RAIN && hasLocalWeather) {
                 if (instance.getModifiedClimateSettings().downfall() == 0
