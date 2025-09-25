@@ -76,7 +76,8 @@ public class SnowRegistryHolder {
             for (SnowRegistryHolder sr : candidates) {
                 if (sr.matcher != null && sr.matcher.test(holder)
                         || sr.nameMatcher != null && sr.nameMatcher.test(path)
-                        || sr.classMatcher != null && blockClass.isAssignableFrom(sr.classMatcher)) {
+                        || sr.classMatcher != null && blockClass.isAssignableFrom(sr.classMatcher)
+                        || sr.matcher == null && sr.nameMatcher == null && sr.classMatcher == null) {
                     SnowDefinition def = sr.block != null ?
                             sr.block.apply(holder) :
                             sr.simple != null ?

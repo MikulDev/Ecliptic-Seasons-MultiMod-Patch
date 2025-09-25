@@ -250,8 +250,8 @@ dependencies {
 //    onlyMainRuntimeOnly fg.deobf("curse.maven:touhou-little-maid-355044:6120178")
 
     compileOnly fg.deobf("curse.maven:ambientsounds-254284:6570130")
-//    onlyMainRuntimeOnly fg.deobf("curse.maven:ambientsounds-254284:6570130")
-//    onlyMainRuntimeOnly fg.deobf("curse.maven:creativecore-257814:6383884")
+    onlyMainRuntimeOnly fg.deobf("curse.maven:ambientsounds-254284:6570130")
+    onlyMainRuntimeOnly fg.deobf("curse.maven:creativecore-257814:6383884")
 
 
     compileOnly fg.deobf("curse.maven:simple-clouds-1121215:6793433")

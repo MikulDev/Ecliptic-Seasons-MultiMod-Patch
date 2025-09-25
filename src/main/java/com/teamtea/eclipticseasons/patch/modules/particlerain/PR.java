@@ -1,6 +1,7 @@
 package com.teamtea.eclipticseasons.patch.modules.particlerain;
 
 import com.teamtea.eclipticseasons.api.EclipticSeasonsApi;
+import com.teamtea.eclipticseasons.api.util.EclipticUtil;
 import com.teamtea.eclipticseasons.common.core.biome.WeatherManager;
 import com.teamtea.eclipticseasons.compat.vanilla.VanillaWeather;
 import com.teamtea.eclipticseasons.config.CommonConfig;
@@ -15,7 +16,7 @@ import net.minecraft.world.level.biome.Biome;
 import net.minecraftforge.common.ForgeConfigSpec;
 import net.minecraftforge.common.Tags;
 
-@ESPatch(mods = PR.MOD_ID,minVersions = "0.12.0-pre11-1")
+@ESPatch(mods = PR.MOD_ID, minVersions = "0.12.0-pre11-1")
 public class PR implements IESModPatch {
     public static final String MOD_ID = "particlerain";
 
@@ -44,9 +45,10 @@ public class PR implements IESModPatch {
 
         public static Biome.Precipitation getPrecipitation(Biome instance, BlockPos pos, ClientLevel level, Holder<Biome> biomeHolder) {
             boolean hasLocalWeather = EclipticSeasonsApi.getInstance().hasLocalWeather(level);
-            Biome.Precipitation precipitationAt = hasLocalWeather ?
-                    WeatherManager.getPrecipitationAt(level, instance, pos) :
-                    VanillaWeather.handlePrecipitationAt(level, instance, pos);
+            Biome.Precipitation precipitationAt =
+                    hasLocalWeather ?
+                            EclipticUtil.getRainOrSnow(level, instance, pos) :
+                            VanillaWeather.getRainOrSnow(level, instance, pos);
             if (!CommonConfig.Weather.notRainInDesert.get()
                     && Config.fixSand.get() && precipitationAt == Biome.Precipitation.RAIN && hasLocalWeather) {
                 if (instance.getModifiedClimateSettings().downfall() == 0 && (biomeHolder.is(Tags.Biomes.IS_DESERT) || biomeHolder.is(BiomeTags.IS_BADLANDS)))
