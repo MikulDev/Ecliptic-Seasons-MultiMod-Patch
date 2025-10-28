@@ -17,7 +17,7 @@ public abstract class MixinBundle {
 
     @Mixin({com.Polarice3.Goety.utils.MobUtil.class})
     public static abstract class MobUtil {
-        @WrapOperation(at = {@At(value = "INVOKE", target = "Lnet/minecraft/world/level/Level;isRaining()Z")},
+        @WrapOperation(require = 0, at = {@At(value = "INVOKE", target = "Lnet/minecraft/world/level/Level;isRaining()Z")},
                 method = {"isInSunlightNoRain"})
         private static boolean es_patch$isInSunlightNoRain_isRaining(Level instance, Operation<Boolean> original,
                                                                      @Local(argsOnly = true) LivingEntity livingEntity) {
@@ -30,7 +30,7 @@ public abstract class MixinBundle {
 
     @Mixin({com.Polarice3.Goety.common.events.LichEvents.class})
     public static abstract class LichEvents {
-        @WrapOperation(at = {@At(value = "INVOKE", target = "Lnet/minecraft/world/level/Level;isRaining()Z")},
+        @WrapOperation(require = 0, at = {@At(value = "INVOKE", target = "Lnet/minecraft/world/level/Level;isRaining()Z")},
                 method = {"onPlayerLichdom"})
         private static boolean es_patch$onPlayerLichdom_isRaining(Level instance, Operation<Boolean> original,
                                                                   @Local Player livingEntity) {
@@ -49,7 +49,7 @@ public abstract class MixinBundle {
             return null;
         }
 
-        @WrapOperation(at = {@At(value = "INVOKE", target = "Lnet/minecraft/world/level/Level;isRaining()Z")},
+        @WrapOperation(require = 0, at = {@At(value = "INVOKE", target = "Lnet/minecraft/world/level/Level;isRaining()Z")},
                 method = {"tick"})
         private boolean es_patch$tick_isRaining(Level instance, Operation<Boolean> original) {
             if (GOETY.Config.enable.get()) {

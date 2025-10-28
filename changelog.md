@@ -1,1 +1,1 @@
-add for mcwbridges and mcwroofs
+update support for geoty

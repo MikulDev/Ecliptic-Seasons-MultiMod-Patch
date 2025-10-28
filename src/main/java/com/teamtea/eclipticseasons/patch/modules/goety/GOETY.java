@@ -4,7 +4,7 @@ import com.teamtea.eclipticseasons.patch.api.ESPatch;
 import com.teamtea.eclipticseasons.patch.api.IESModPatch;
 import net.minecraftforge.common.ForgeConfigSpec;
 
-@ESPatch(mods = "goety")
+@ESPatch(mods = "goety",minVersions = "2.5.37.5")
 public class GOETY implements IESModPatch {
 
     @Override

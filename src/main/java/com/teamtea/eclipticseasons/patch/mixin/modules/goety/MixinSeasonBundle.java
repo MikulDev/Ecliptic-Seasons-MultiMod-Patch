@@ -38,7 +38,7 @@ public abstract class MixinSeasonBundle {
 
     @Mixin(com.Polarice3.Goety.compat.serene_seasons.SSeasonsLoaded.class)
     public static abstract class SSeasonsLoadedMixin {
-        @Inject(at = {@At(value = "HEAD")},
+        @Inject(require = 0, at = {@At(value = "HEAD")},
                 remap = false, method = {"isLoaded"}, cancellable = true)
         private void es_patch$isLoaded(CallbackInfoReturnable<Boolean> cir) {
             if (GOETY.Config.fakeSeason.get()) {
@@ -49,7 +49,7 @@ public abstract class MixinSeasonBundle {
 
     @Mixin(com.Polarice3.Goety.compat.serene_seasons.SSeasonsIntegration.class)
     public static abstract class SSeasonsIntegrationMixin {
-        @Inject(at = {@At(value = "HEAD")},
+        @Inject(require = 0, at = {@At(value = "HEAD")},
                 remap = false, method = {"summonSnowVariant"}, cancellable = true)
         private static void es_patch$summonSnowVariant(Level level, BlockPos pos, CallbackInfoReturnable<Boolean> cir) {
             if (GOETY.Config.fakeSeason.get()) {
