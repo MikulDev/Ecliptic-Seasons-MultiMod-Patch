@@ -222,7 +222,7 @@ dependencies {
 
     implementation fg.deobf("curse.maven:jei-238222:5846810")
     implementation fg.deobf("curse.maven:jade-324717:4654448")
-    implementation fg.deobf("curse.maven:ecliptic-seasons-1118306:7007843")
+    implementation fg.deobf("curse.maven:ecliptic-seasons-1118306:7182495")
 
     onlyMainRuntimeOnly fg.deobf("curse.maven:embeddium-908741:5681725")
     onlyMainRuntimeOnly fg.deobf("curse.maven:oculus-581495:6020952")
@@ -288,6 +288,9 @@ dependencies {
 
     onlyMainRuntimeOnly fg.deobf("curse.maven:macaws-roofs-352039:6494466")
     onlyMainRuntimeOnly fg.deobf("curse.maven:macaws-bridges-351725:6528751")
+
+    compileOnly fg.deobf("curse.maven:stardew-fishing-1066037:6851718")
+    onlyMainRuntimeOnly fg.deobf("curse.maven:stardew-fishing-1066037:6851718")
 
     println("----Scan libs begin----")
     fileTree(dir: 'libs', include: ['*.jar']).each { File file ->

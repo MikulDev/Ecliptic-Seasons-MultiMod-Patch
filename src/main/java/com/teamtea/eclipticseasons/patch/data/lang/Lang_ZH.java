@@ -21,6 +21,12 @@ public class Lang_ZH extends LangHelper {
         addConfigLang();
         addFeyWild();
         addErrorLang();
+        addSomeInfo();
+    }
+
+    private void addSomeInfo() {
+        add("info.eclipticseasons_multimodpatch.stardew_fishing.bad_weather", "天气很坏，因此无法捕鱼！");
+        add("info.eclipticseasons_multimodpatch.stardew_fishing.not_fishing_seasons", "现在是休渔期！");
     }
 
     private void addFeyWild() {

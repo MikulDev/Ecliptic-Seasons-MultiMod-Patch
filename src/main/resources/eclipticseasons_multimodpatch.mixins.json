@@ -29,17 +29,18 @@
     "modules.minecolonies.MixinCitizenAI",
     "modules.minecolonies.MixinCitizenSleepHandler",
     "modules.snowyspirit.MixinSnowySpirit",
-    "modules.snowyspirit.MixinSnowySpiritGroundStatus"
+    "modules.snowyspirit.MixinSnowySpiritGroundStatus",
+    "modules.stardew_fishing.MixinFishingHookLogic"
   ],
   "client": [
     "modules.ambientsounds.MixinAmbientEnvironment",
     "modules.ambientsounds.MixinBiomeEnvironment",
     "modules.journeymap.MixinBlockMD",
     "modules.journeymap.MixinMapPlayerTask",
-    "modules.yuushya.MixinBundle$ExtraModelManagers",
     "modules.particlerain.MixinWeatherParticleSpawner",
     "modules.presencefootsteps.MixinPFSolver",
-    "modules.simpleclouds.MixinSimpleCloudWorldEffects"
+    "modules.simpleclouds.MixinSimpleCloudWorldEffects",
+    "modules.yuushya.MixinBundle$ExtraModelManagers"
   ],
   "injectors": {
     "defaultRequire": 1

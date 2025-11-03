@@ -1,6 +1,8 @@
 {
   "error.eclipticseasons_multimodpatch.version.eclipticseasons.min": "§f[Ecliptic Seasons] Incompatible version! Patch module §e%s§f requires Ecliptic Seasons §a%s§f or higher (current: §c%s§f)§r",
   "error.eclipticseasons_multimodpatch.version.mods.min": "§f[Patch Module] %s dependency is incompatible! Requires §a%s§f or higher (current: §c%s§f)§r",
+  "info.eclipticseasons_multimodpatch.stardew_fishing.bad_weather": "The weather is terrible, so you can't go fishing!",
+  "info.eclipticseasons_multimodpatch.stardew_fishing.not_fishing_seasons": "It's the fishing off-season!",
   "quest.eclipticseasons_multimodpatch.autumn.autumn_core.complete.description": "The fields bow in gold; the wind hums its thanks.$(n)You've honored $(autumn)Autumn's Trial$() and earned its richest gift.$(n)$(n)This is the $(autumn)Heart of Autumn$() — heavy with praise and plenty.$(n)Let the world remember what you reaped.",
   "quest.eclipticseasons_multimodpatch.autumn.autumn_core.complete.title": "Autumn's Yield",
   "quest.eclipticseasons_multimodpatch.autumn.autumn_core.start.description": "Leaves fall, the wind sings of harvest.$(n)Will you embrace the $(autumn)Pact of Autumn$()?$(n)$(n)Gather $(autumn)64 autumn crop seeds$() and mark the golden age of the earth.$(n)The land waits for your touch.",

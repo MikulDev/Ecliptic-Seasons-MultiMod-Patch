@@ -17,8 +17,13 @@ public class Lang_EN extends LangHelper {
         addTouhouLittleMaid();
         addConfigLang();
         addFeyWild();
-
+        addSomeInfo();
         addErrorLang();
+    }
+
+    private void addSomeInfo() {
+        add("info.eclipticseasons_multimodpatch.stardew_fishing.bad_weather", "The weather is terrible, so you can't go fishing!");
+        add("info.eclipticseasons_multimodpatch.stardew_fishing.not_fishing_seasons", "It's the fishing off-season!");
     }
 
     private void addFeyWild() {
