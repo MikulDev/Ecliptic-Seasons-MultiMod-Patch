@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Set;
 
 public class EclipticSeasonsPatchMixinPlugin  implements IMixinConfigPlugin {
-    public static final String MIXIN_COMPAT_PACKAGE = "mixin.compat.";
+    public static final String MIXIN_COMPAT_PACKAGE = "mixin.modules.";
 
     @Override
     public void onLoad(String mixinPackage) {
