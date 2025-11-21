@@ -202,6 +202,15 @@ repositories {
     maven {
         url "https://harleyoconnor.com/maven"
     }
+
+
+    maven {
+        name "nonamecrackers2Maven"
+        url "https://maven.nonamecrackers2.dev/releases"
+        content {
+            includeGroup "nonamecrackers2"
+        }
+    }
 }
 
 dependencies {
@@ -222,7 +231,7 @@ dependencies {
 
     implementation fg.deobf("curse.maven:jei-238222:5846810")
     implementation fg.deobf("curse.maven:jade-324717:4654448")
-    implementation fg.deobf("curse.maven:ecliptic-seasons-1118306:7182495")
+    implementation fg.deobf("curse.maven:ecliptic-seasons-1118306:7245046")
 
     onlyMainRuntimeOnly fg.deobf("curse.maven:embeddium-908741:5681725")
     onlyMainRuntimeOnly fg.deobf("curse.maven:oculus-581495:6020952")
@@ -253,9 +262,9 @@ dependencies {
     onlyMainRuntimeOnly fg.deobf("curse.maven:ambientsounds-254284:6570130")
     onlyMainRuntimeOnly fg.deobf("curse.maven:creativecore-257814:6383884")
 
-
-    compileOnly fg.deobf("curse.maven:simple-clouds-1121215:6793433")
-//    onlyMainRuntimeOnly fg.deobf("curse.maven:simple-clouds-1121215:6793433")
+    compileOnly fg.deobf("nonamecrackers2:simplecloudsapi-forge:1.4-1.20.1")
+    compileOnly fg.deobf("curse.maven:simple-clouds-1121215:6928978")
+    onlyMainRuntimeOnly fg.deobf("curse.maven:simple-clouds-1121215:6928978")
 
     compileOnly fg.deobf("curse.maven:minecolonies-245506:6820739")
 
