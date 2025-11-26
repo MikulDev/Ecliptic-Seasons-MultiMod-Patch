@@ -1,13 +1,2 @@
-update support for geoty
-
-------
-
-fix the issue of mixins configuration json
-
-------
-
-add support for stardew_fishing
-
------
-
-update support of Simple Clouds
+thanks for MarioSMB since #12
+Fixed an issue where the highest Ecliptic Seasaons version in the prebuilt modules was required even if the corresponding mod wasn’t loaded.

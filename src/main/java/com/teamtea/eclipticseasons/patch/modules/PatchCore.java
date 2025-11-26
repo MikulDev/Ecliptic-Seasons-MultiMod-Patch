@@ -44,15 +44,10 @@ public class PatchCore {
                 return false;
             } else {
                 List<String> required = (ArrayList<String>) $.annotationData().getOrDefault("mods", new ArrayList<>());
-                String minCoreVersion = (String) $.annotationData().getOrDefault("esVersion", "");
-                if (!minCoreVersion.isEmpty()) {
-                    if (invalidVersion(minCoreVersion, coreModVersion)) {
-                        MOD_LOADING_EXCEPTIONS.add(new ModLoadingException(iModInfo, ModLoadingStage.CONSTRUCT, LangUtil.parseI18n("error.eclipticseasons_multimodpatch.version.eclipticseasons.min", String.join(", ", required), minCoreVersion,coreModVersion.toString()), new RuntimeException()));
-                    }
-                }
+
                 List<String> minVersions = (ArrayList<String>) $.annotationData().getOrDefault("minVersions", new ArrayList<>());
                 boolean shouldTryLoad = modIdSet.containsAll(required);
-                if (shouldTryLoad&&!minVersions.isEmpty()
+                if (shouldTryLoad && !minVersions.isEmpty()
                         && required.size() == minVersions.size()) {
                     for (int i = 0; i < required.size(); i++) {
                         String sModId = required.get(i);
@@ -67,12 +62,20 @@ public class PatchCore {
                         MOD_LOADING_EXCEPTIONS.add(new ModLoadingException(iModInfo, ModLoadingStage.CONSTRUCT, LangUtil.parseI18n("error.eclipticseasons_multimodpatch.version.mods.min", sModId, mv, modUseVersion), new RuntimeException()));
                     }
                 }
+                if(shouldTryLoad){
+                    String minCoreVersion = (String) $.annotationData().getOrDefault("esVersion", "");
+                    if (!minCoreVersion.isEmpty()) {
+                        if (invalidVersion(minCoreVersion, coreModVersion)) {
+                            MOD_LOADING_EXCEPTIONS.add(new ModLoadingException(iModInfo, ModLoadingStage.CONSTRUCT, LangUtil.parseI18n("error.eclipticseasons_multimodpatch.version.eclipticseasons.min", String.join(", ", required), minCoreVersion, coreModVersion.toString()), new RuntimeException()));
+                        }
+                    }
+                }
                 return shouldTryLoad;
             }
         }).map(ModFileScanData.AnnotationData::memberName).toList();
 
         if (!PatchCore.MOD_LOADING_EXCEPTIONS.isEmpty()) {
-           Collections.reverse(PatchCore.MOD_LOADING_EXCEPTIONS);
+            Collections.reverse(PatchCore.MOD_LOADING_EXCEPTIONS);
             throw new LoadingFailedException(PatchCore.MOD_LOADING_EXCEPTIONS);
         }
 

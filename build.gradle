@@ -264,7 +264,7 @@ dependencies {
 
     compileOnly fg.deobf("nonamecrackers2:simplecloudsapi-forge:1.4-1.20.1")
     compileOnly fg.deobf("curse.maven:simple-clouds-1121215:6928978")
-    onlyMainRuntimeOnly fg.deobf("curse.maven:simple-clouds-1121215:6928978")
+//    onlyMainRuntimeOnly fg.deobf("curse.maven:simple-clouds-1121215:6928978")
 
     compileOnly fg.deobf("curse.maven:minecolonies-245506:6820739")
 
