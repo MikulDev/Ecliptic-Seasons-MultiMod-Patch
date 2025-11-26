@@ -45,6 +45,14 @@ repositories {
     maven {
         url "https://harleyoconnor.com/maven"
     }
+
+    maven {
+        name "nonamecrackers2Maven"
+        url "https://maven.nonamecrackers2.dev/releases"
+        content {
+            includeGroup "nonamecrackers2"
+        }
+    }
 }
 
 base {
@@ -146,7 +154,7 @@ dependencies {
     runtimeOnly("curse.maven:jei-238222:5846880")
     runtimeOnly("curse.maven:jade-324717:5591256")
 
-    implementation("curse.maven:ecliptic-seasons-1118306:7007860")
+    implementation("curse.maven:ecliptic-seasons-1118306:7257708")
 
     onlyMainRuntimeOnly("curse.maven:irisshaders-455508:6213632")
     onlyMainRuntimeOnly "maven.modrinth:sodium:mc1.21.1-0.6.9-neoforge"
@@ -171,7 +179,9 @@ dependencies {
     compileOnly "curse.maven:touhou-little-maid-355044:6175338"
     onlyMainRuntimeOnly "curse.maven:touhou-little-maid-355044:6175338"
 
-    compileOnly("curse.maven:simple-clouds-1121215:5812034")
+    compileOnly "curse.maven:simple-clouds-1121215:6928979"
+    compileOnly("nonamecrackers2:simplecloudsapi-neoforge:1.4-1.21.1")
+    onlyMainRuntimeOnly "curse.maven:simple-clouds-1121215:6928979"
     compileOnly("curse.maven:cold-sweat-506194:6176789")
 //    runtimeOnly("curse.maven:cold-sweat-506194:6176789")
     compileOnly "curse.maven:in-control-257356:6677543"

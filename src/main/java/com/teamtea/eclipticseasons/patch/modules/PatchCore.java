@@ -42,17 +42,6 @@ public class PatchCore {
                 return false;
             } else {
                 List<String> required = (ArrayList<String>) $.annotationData().getOrDefault("mods", new ArrayList<>());
-                String minCoreVersion = (String) $.annotationData().getOrDefault("esVersion", "");
-                if (!minCoreVersion.isEmpty()) {
-                    if (invalidVersion(minCoreVersion, coreModVersion)) {
-                        MOD_LOADING_EXCEPTIONS.add(new ModLoadingIssue(
-                                ModLoadingIssue.Severity.ERROR,
-                                LangUtil.parseI18n("error.eclipticseasons_multimodpatch.version.eclipticseasons.min",
-                                        String.join(", ", required), minCoreVersion, coreModVersion.toString()),
-                                List.of())
-                                .withAffectedMod(iModInfo));
-                    }
-                }
                 List<String> minVersions = (ArrayList<String>) $.annotationData().getOrDefault("minVersions", new ArrayList<>());
                 boolean shouldTryLoad = modIdSet.containsAll(required);
                 if (shouldTryLoad && !minVersions.isEmpty()
@@ -74,6 +63,19 @@ public class PatchCore {
                                 List.of()).withAffectedModFile(
                                 Platform.getModFile(sModId)
                         ));
+                    }
+                }
+                if(shouldTryLoad){
+                    String minCoreVersion = (String) $.annotationData().getOrDefault("esVersion", "");
+                    if (!minCoreVersion.isEmpty()) {
+                        if (invalidVersion(minCoreVersion, coreModVersion)) {
+                            MOD_LOADING_EXCEPTIONS.add(new ModLoadingIssue(
+                                    ModLoadingIssue.Severity.ERROR,
+                                    LangUtil.parseI18n("error.eclipticseasons_multimodpatch.version.eclipticseasons.min",
+                                            String.join(", ", required), minCoreVersion, coreModVersion.toString()),
+                                    List.of())
+                                    .withAffectedMod(iModInfo));
+                        }
                     }
                 }
                 return shouldTryLoad;

@@ -10,6 +10,7 @@
     "modules.incontrol.MixinGenericRuleEvaluator",
     "modules.minecolonies.MixinCitizenAI",
     "modules.minecolonies.MixinCitizenSleepHandler",
+    "modules.simpleclouds.MixinSimpleCloudTickChunks",
     "modules.snowyspirit.MixinSnowySpirit",
     "modules.snowyspirit.MixinSnowySpiritGroundStatus"
   ],
