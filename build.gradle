@@ -99,7 +99,10 @@ runs {
         // This is only needed if you are developing an addon and it should be your mod id
         // property "guideme.ae2.guide.sourcesNamespace", "ae2addon"
         systemProperty('guideme.showOnStartup', "${mod_id}:index.md") // Start at index.md
-
+        jvmArguments = [
+//                '-XX:TieredStopAtLevel=3',
+//                "-XX:+AllowEnhancedClassRedefinition",
+'-Dmixin.debug.export=true']
         modSource project.sourceSets.onlyMain
     }
 
@@ -181,7 +184,7 @@ dependencies {
 
     compileOnly "curse.maven:simple-clouds-1121215:6928979"
     compileOnly("nonamecrackers2:simplecloudsapi-neoforge:1.4-1.21.1")
-    onlyMainRuntimeOnly "curse.maven:simple-clouds-1121215:6928979"
+//    onlyMainRuntimeOnly "curse.maven:simple-clouds-1121215:6928979"
     compileOnly("curse.maven:cold-sweat-506194:6176789")
 //    runtimeOnly("curse.maven:cold-sweat-506194:6176789")
     compileOnly "curse.maven:in-control-257356:6677543"
@@ -219,6 +222,9 @@ dependencies {
     onlyMainRuntimeOnly "curse.maven:bonsai-trees-278993:6976430"
 
     onlyMainRuntimeOnly "curse.maven:ultramarine-1187491:6930907"
+
+    compileOnly "curse.maven:xaeros-world-map-317780:6778114"
+    implementation "curse.maven:xaeros-minimap-263420:6778051"
 
     println("----Scan onlyMainRuntimeOnly libs begin----")
     fileTree(dir: 'libs', include: ['*.jar']).each { File file ->

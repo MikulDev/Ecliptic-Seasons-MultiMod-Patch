@@ -12,7 +12,9 @@
     "modules.minecolonies.MixinCitizenSleepHandler",
     "modules.simpleclouds.MixinSimpleCloudTickChunks",
     "modules.snowyspirit.MixinSnowySpirit",
-    "modules.snowyspirit.MixinSnowySpiritGroundStatus"
+    "modules.snowyspirit.MixinSnowySpiritGroundStatus",
+    "modules.xaerominimap.MixinBlockMD",
+    "modules.xaeroworldmap.MixinBlockMD"
   ],
   "client": [
     "modules.ambientsounds.MixinAmbientEnvironment",
