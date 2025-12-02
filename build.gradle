@@ -301,6 +301,9 @@ dependencies {
     compileOnly fg.deobf("curse.maven:stardew-fishing-1066037:6851718")
     onlyMainRuntimeOnly fg.deobf("curse.maven:stardew-fishing-1066037:6851718")
 
+    implementation fg.deobf("curse.maven:xaeros-minimap-263420:6778028")
+    compileOnly fg.deobf("curse.maven:xaeros-world-map-317780:6778091")
+
     println("----Scan libs begin----")
     fileTree(dir: 'libs', include: ['*.jar']).each { File file ->
         def fileName = file.name

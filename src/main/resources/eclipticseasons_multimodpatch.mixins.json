@@ -31,7 +31,9 @@
     "modules.simpleclouds.MixinSimpleCloudTickChunks",
     "modules.snowyspirit.MixinSnowySpirit",
     "modules.snowyspirit.MixinSnowySpiritGroundStatus",
-    "modules.stardew_fishing.MixinFishingHookLogic"
+    "modules.stardew_fishing.MixinFishingHookLogic",
+    "modules.xaerominimap.MixinBlockMD",
+    "modules.xaeroworldmap.MixinBlockMD"
   ],
   "client": [
     "modules.ambientsounds.MixinAmbientEnvironment",
