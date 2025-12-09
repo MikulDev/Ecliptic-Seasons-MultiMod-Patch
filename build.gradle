@@ -157,7 +157,7 @@ dependencies {
     runtimeOnly("curse.maven:jei-238222:5846880")
     runtimeOnly("curse.maven:jade-324717:5591256")
 
-    implementation("curse.maven:ecliptic-seasons-1118306:7257708")
+    implementation("curse.maven:ecliptic-seasons-1118306:7304586")
 
     onlyMainRuntimeOnly("curse.maven:irisshaders-455508:6213632")
     onlyMainRuntimeOnly "maven.modrinth:sodium:mc1.21.1-0.6.9-neoforge"
@@ -225,6 +225,8 @@ dependencies {
 
     compileOnly "curse.maven:xaeros-world-map-317780:6778114"
     implementation "curse.maven:xaeros-minimap-263420:6778051"
+
+    compileOnly "curse.maven:snow-real-magic-308663:6783557"
 
     println("----Scan onlyMainRuntimeOnly libs begin----")
     fileTree(dir: 'libs', include: ['*.jar']).each { File file ->
