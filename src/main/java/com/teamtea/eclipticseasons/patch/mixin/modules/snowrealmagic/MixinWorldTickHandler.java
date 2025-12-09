@@ -60,7 +60,7 @@ public abstract class MixinWorldTickHandler {
             remap = false,
             cancellable = true)
     private static void eclipticseasons$tick_shouldSkip_melt(ServerLevel level, LevelChunk chunk, CallbackInfo ci) {
-        if (SRM.Config.enable.get() && !CommonConfig.Temperature.snowDown.get()) {
+        if (SRM.Config.enable.get() && !CommonConfig.Temperature.iceMelt.get()) {
             ci.cancel();
         }
     }
