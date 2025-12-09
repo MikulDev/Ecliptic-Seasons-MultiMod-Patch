@@ -29,6 +29,7 @@
     "modules.minecolonies.MixinCitizenAI",
     "modules.minecolonies.MixinCitizenSleepHandler",
     "modules.simpleclouds.MixinSimpleCloudTickChunks",
+    "modules.snowrealmagic.MixinWorldTickHandler",
     "modules.snowyspirit.MixinSnowySpirit",
     "modules.snowyspirit.MixinSnowySpiritGroundStatus",
     "modules.stardew_fishing.MixinFishingHookLogic",

@@ -231,7 +231,7 @@ dependencies {
 
     implementation fg.deobf("curse.maven:jei-238222:5846810")
     implementation fg.deobf("curse.maven:jade-324717:4654448")
-    implementation fg.deobf("curse.maven:ecliptic-seasons-1118306:7245046")
+    implementation fg.deobf("curse.maven:ecliptic-seasons-1118306:7304569")
 
     onlyMainRuntimeOnly fg.deobf("curse.maven:embeddium-908741:5681725")
     onlyMainRuntimeOnly fg.deobf("curse.maven:oculus-581495:6020952")
@@ -303,6 +303,9 @@ dependencies {
 
     implementation fg.deobf("curse.maven:xaeros-minimap-263420:6778028")
     implementation fg.deobf("curse.maven:xaeros-world-map-317780:6778091")
+
+    implementation fg.deobf("curse.maven:snow-real-magic-308663:6888541")
+    implementation fg.deobf("curse.maven:kiwi-303657:7289940")
 
     println("----Scan libs begin----")
     fileTree(dir: 'libs', include: ['*.jar']).each { File file ->
