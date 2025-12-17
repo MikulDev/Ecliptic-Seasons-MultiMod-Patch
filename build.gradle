@@ -191,6 +191,7 @@ dependencies {
     onlyMainRuntimeOnly "curse.maven:in-control-257356:6677543"
 
     compileOnly "curse.maven:minecolonies-245506:6844367"
+
     compileOnly "curse.maven:dynamictrees-252818:6611182"
     onlyMainRuntimeOnly "curse.maven:dynamictrees-252818:6611182"
 

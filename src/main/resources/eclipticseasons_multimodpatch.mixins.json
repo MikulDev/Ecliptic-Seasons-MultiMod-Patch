@@ -13,9 +13,7 @@
     "modules.simpleclouds.MixinSimpleCloudTickChunks",
     "modules.snowrealmagic.MixinWorldTickHandler",
     "modules.snowyspirit.MixinSnowySpirit",
-    "modules.snowyspirit.MixinSnowySpiritGroundStatus",
-    "modules.xaerominimap.MixinBlockMD",
-    "modules.xaeroworldmap.MixinBlockMD"
+    "modules.snowyspirit.MixinSnowySpiritGroundStatus"
   ],
   "client": [
     "modules.ambientsounds.MixinAmbientEnvironment",
@@ -23,7 +21,9 @@
     "modules.journeymap.MixinBlockMD",
     "modules.particlerain.MixinWeatherParticleSpawner",
     "modules.presencefootsteps.MixinPFSolver",
-    "modules.simpleclouds.MixinSimpleCloudWorldEffects"
+    "modules.simpleclouds.MixinSimpleCloudWorldEffects",
+    "modules.xaerominimap.MixinMinimapWriter",
+    "modules.xaeroworldmap.MixinMapPixel"
   ],
   "injectors": {
     "defaultRequire": 1

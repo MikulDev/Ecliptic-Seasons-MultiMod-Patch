@@ -15,7 +15,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import xaero.map.region.MapPixel;
 
 @Mixin({MapPixel.class})
-public abstract class MixinBlockMD {
+public abstract class MixinMapPixel {
 
     @Shadow(remap = false)
     protected BlockState state;

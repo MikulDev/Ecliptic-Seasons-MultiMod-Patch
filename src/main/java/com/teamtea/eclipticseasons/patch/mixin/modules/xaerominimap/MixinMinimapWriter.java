@@ -14,7 +14,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import xaero.common.minimap.write.MinimapWriter;
 
 @Mixin({MinimapWriter.class})
-public abstract class MixinBlockMD {
+public abstract class MixinMinimapWriter {
 
     //@Shadow(remap = false)
     //protected BlockState state;
