@@ -4,7 +4,6 @@ package com.teamtea.eclipticseasons.patch.mixin.modules.minecolonies;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import com.minecolonies.core.entity.ai.workers.CitizenAI;
-import com.teamtea.eclipticseasons.api.EclipticSeasonsApi;
 import com.teamtea.eclipticseasons.config.CommonConfig;
 import com.teamtea.eclipticseasons.patch.modules.minecolonies.MCC;
 import net.minecraft.world.level.Level;
@@ -18,7 +17,7 @@ public abstract class MixinCitizenAI {
     @WrapOperation(at = {@At(value = "INVOKE", target = "Lcom/minecolonies/api/util/WorldUtil;isPastTime(Lnet/minecraft/world/level/Level;I)Z")},
             method = {"calculateNextState"},
             remap = false)
-    private boolean eclipticseasons$isHalloween(Level world, int pastTime, Operation<Boolean> original) {
+    private boolean eclipticseasons$calculateNextState_isPastTime(Level world, int pastTime, Operation<Boolean> original) {
         if (MCC.Config.enable.get() && CommonConfig.Season.daylightChange.get()) {
             return MCC.Hook.isDay(world);
         }

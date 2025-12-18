@@ -19,7 +19,7 @@ import java.lang.reflect.Field;
 public class SC implements IESModPatch {
 
     @Override
-    public void client(ForgeConfigSpec.Builder consumer) {
+    public void common(ForgeConfigSpec.Builder consumer) {
         Config.load(consumer);
     }
 

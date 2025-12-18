@@ -10,7 +10,7 @@ import net.minecraftforge.common.ForgeConfigSpec;
 public class MCC implements IESModPatch {
 
     @Override
-    public void client(ForgeConfigSpec.Builder consumer) {
+    public void common(ForgeConfigSpec.Builder consumer) {
         Config.load(consumer);
     }
 

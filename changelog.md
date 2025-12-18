@@ -1,3 +1,1 @@
-update support for Xaero Map
-
-update support for Snow Real Magic
+fix #17 Using this mod resulted in the colony AI not working and frequent backend errors
