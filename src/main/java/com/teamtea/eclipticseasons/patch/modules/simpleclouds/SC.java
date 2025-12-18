@@ -19,9 +19,10 @@ import java.lang.reflect.Field;
 public class SC implements IESModPatch {
 
     @Override
-    public void client(ModConfigSpec.Builder consumer) {
+    public void common(ModConfigSpec.Builder consumer) {
         Config.load(consumer);
     }
+
 
     @Override
     public void register(IEventBus gameBus, IEventBus modEventBus) {

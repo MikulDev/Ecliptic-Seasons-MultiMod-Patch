@@ -10,7 +10,7 @@ import net.neoforged.neoforge.common.ModConfigSpec;
 public class MCC implements IESModPatch {
 
     @Override
-    public void client(ModConfigSpec.Builder consumer) {
+    public void common(ModConfigSpec.Builder consumer) {
         Config.load(consumer);
     }
 
